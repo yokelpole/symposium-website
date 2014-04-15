@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<!--
+	2014 Capstone Symposium Website
+	Created by:
+		Kyle Poole
+		Cory Purnell
+		Dylan Moore
+-->
+<html>
+	<head>
+	    <meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <title>Camosun College - Technology Symposium 2014</title>
+
+	    <!-- css incldues -->
+	    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+	    <link href="./css/font-awesome.min.css" rel="stylesheet" />
+	    <link href="./css/jQuery.fullPage.css" rel="stylesheet"/>
+	    <link href="./css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+
+		<!-- Source Sans Pro font -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300, 400,700,900' rel='stylesheet' type='text/css'>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.js"></script>
+		<script type="text/javascript" src="./js/jQuery.fullpage.js"></script>
+		<script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				// Activate the full page capabilities.
+				$('#fullpage').fullpage({
+					anchors: ['introduction', 'groups'],
+					'slidesColor': ['white', '#939FAA'],
+					'autoScrolling': false
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="section" id="welcome" style="text-align: center">
+			<img src="./images/Header - Graphic.png"  />
+			<img src="./images/Header - Date and Place.png" />
+			<h1 style="font-family: 'Source Sans Pro', sans-serif; color: #bc446a; font-weight: 300; ">An open showcase of graduating students' projects.</h1>
+			<div class="selection-menu">
+				<span style="position: relative">
+					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 50px; top: -10px">GROUPS</span>
+					<img id="welcome-groups" src="./images/Menu Hexagon - Green.png" style="height: 200px;" />
+				</span>
+				<span style="position: relative">
+					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 35px; top: -10px">SPONSORS</span>
+					<img id="welcome-sponsors" src="./images/Menu Hexagon - Yellow.png" style="height: 200px" />
+				</span>
+				<span style="position: relative">
+					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 30px; top: -10px">SYMPOSIUM</span>
+					<img id="welcome-symposium" src="./images/Menu Hexagon - Purple.png" style="height: 200px" />
+				</span>
+				<span style="position: relative">
+					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 40px; top: -10px">REGISTER</span>
+					<img id="welcome-register" src="./images/Menu Hexagon - Red.png" style="height: 200px" />
+				</span>
+			</div>
+			<i class="fa fa-arrow-down" style="font-size:72pt; margin-top: 20px;"></i>
+		</div>
+		<h1>Goodbye cruel world!</h1>
+	</body>
+</html>
