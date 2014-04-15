@@ -41,29 +41,38 @@
 		</script>
 	</head>
 	<body>
-		<div class="section" id="welcome" style="text-align: center">
-			<img src="./images/Header - Graphic.png"  />
-			<img src="./images/Header - Date and Place.png" />
-			<h1 style="font-family: 'Source Sans Pro', sans-serif; color: #bc446a; font-weight: 300; ">An open showcase of graduating students' projects.</h1>
-			<div class="selection-menu">
-				<span style="position: relative">
-					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 50px; top: -10px">GROUPS</span>
-					<img id="welcome-groups" src="./images/Menu Hexagon - Green.png" style="height: 200px;" />
-				</span>
-				<span style="position: relative">
-					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 35px; top: -10px">SPONSORS</span>
-					<img id="welcome-sponsors" src="./images/Menu Hexagon - Yellow.png" style="height: 200px" />
-				</span>
-				<span style="position: relative">
-					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 30px; top: -10px">SYMPOSIUM</span>
-					<img id="welcome-symposium" src="./images/Menu Hexagon - Purple.png" style="height: 200px" />
-				</span>
-				<span style="position: relative">
-					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 40px; top: -10px">REGISTER</span>
-					<img id="welcome-register" src="./images/Menu Hexagon - Red.png" style="height: 200px" />
-				</span>
+		<div class="section" id="welcome">
+			<div class="row">
+				<div class="col-md-12">
+					<img class="welcome_graphic" src="./images/Header - Complete.png"  />
+				</div>
 			</div>
-			<i class="fa fa-arrow-down" style="font-size:72pt; margin-top: 20px;"></i>
+			<div class="row">
+				<h1 class="welcome_text">An open showcase of graduating students' projects.</h1>
+			</div>
+			<div class="welcome_selection_menu row">
+				<div class="col-md-6 welcome_group_and_sponsors">
+					<span class="welcome_selection_button">
+						<span class="welcome_button_text" style="left: 50px;">GROUPS</span>
+						<img id="welcome-groups" src="./images/Menu Hexagon - Green.png" />
+					</span>
+					<span class="welcome_selection_button">
+						<span class="welcome_button_text" style="left: 35px;">SPONSORS</span>
+						<img id="welcome-sponsors" src="./images/Menu Hexagon - Yellow.png"  />
+					</span>
+				</div>
+				<div class="col-md-6 welcome_symposium_and_register">
+					<span class="welcome_selection_button">
+						<span class="welcome_button_text" style="left: 30px;">SYMPOSIUM</span>
+						<img id="welcome-symposium" src="./images/Menu Hexagon - Purple.png"  />
+					</span>
+					<span class="welcome_selection_button">
+						<span class="welcome_button_text" style="left: 40px;">REGISTER</span>
+						<img id="welcome-register" src="./images/Menu Hexagon - Red.png"/>
+					</span>
+				</div>
+			</div>
+			<i class="fa fa-arrow-down welcome_down_arrow"></i>
 		</div>
 		<h1>Goodbye cruel world!</h1>
 	</body>

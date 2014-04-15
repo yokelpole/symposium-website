@@ -1,0 +1,71 @@
+/* All attempts have been made to place CSS in order of where it first appears in page */
+
+/********************************
+Welcome/Header area specific CSS.
+*********************************/
+
+div.section {
+	text-align: center;
+}
+
+img.welcome_graphic {
+	max-width: 100%;
+}
+
+h1.welcome_text {
+	font-family: 'Source Sans Pro', sans-serif; 
+	color: #bc446a; 
+	font-weight: 300;
+}
+
+div.welcome_selection_menu {
+	margin-top: 20px;
+}
+
+div.welcome_group_and_sponsors {
+	text-align: right; 
+	padding-right: 0px;
+}
+
+span.welcome_selection_button {
+	position: relative;
+}
+
+.welcome_selection_button img {
+	height: 200px;
+}
+
+span.welcome_button_text {
+	font-family: 'Source Sans Pro', sans-serif; 
+	color: white; position: absolute; 
+	font-weight: 700; 
+	font-size: 20pt; 
+	top: -10px;
+}
+
+img.welcome_hexagon_graphic {
+	height: 200px;
+}
+
+div.welcome_symposium_and_register {
+	text-align: left; 
+	padding-left: 0px;
+}
+
+i.welcome_down_arrow {
+	font-size:72pt; 
+	margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+	div.welcome_group_and_sponsors {
+		text-align: center;
+		padding-right: 15px;
+		padding-bottom: 10px;
+	}
+
+	div.welcome_symposium_and_register {
+		text-align: center;
+		padding-left: 15px;
+	}
+}
