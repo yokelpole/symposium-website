@@ -1,8 +1,17 @@
 /* All attempts have been made to place CSS in order of where it first appears in page */
 
-/********************************
-Welcome/Header area specific CSS.
-*********************************/
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+	font-size: 12pt;
+}
+
+/**************************************************
+	Welcome/Header area specific CSS.
+***************************************************/
+
 
 div.section {
 	text-align: center;
@@ -13,7 +22,6 @@ img.welcome_graphic {
 }
 
 h1.welcome_text {
-	font-family: 'Source Sans Pro', sans-serif; 
 	color: #bc446a; 
 	font-weight: 300;
 }
@@ -36,7 +44,6 @@ span.welcome_selection_button {
 }
 
 span.welcome_button_text {
-	font-family: 'Source Sans Pro', sans-serif; 
 	color: white; position: absolute; 
 	font-weight: 700; 
 	font-size: 20pt; 
@@ -57,6 +64,7 @@ i.welcome_down_arrow {
 	margin-top: 20px;
 }
 
+/* Media query to make selection buttons work w/ responsive design */
 @media (max-width: 992px) {
 	div.welcome_group_and_sponsors {
 		text-align: center;
@@ -68,4 +76,41 @@ i.welcome_down_arrow {
 		text-align: center;
 		padding-left: 15px;
 	}
+}
+
+/**************************************************
+	Groups specific CSS.
+***************************************************/
+.groups h1 {
+	padding: 10px;
+	text-align: center; 
+	color: white;
+}
+
+.group_row {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.group_description {
+	padding: 10px;
+}
+
+/**************************************************
+	Misc CSS.
+***************************************************/
+
+.table {
+	margin-bottom: 0px;
+}
+
+/* Allows for vertical centering of row content */
+.center_row {
+	display: table;
+}
+
+.center {
+	display: table-cell;
+    vertical-align:middle;
+    float:none;
 }

@@ -32,15 +32,16 @@
 		<script>
 			$(document).ready(function() {
 				// Activate the full page capabilities.
-				$('#fullpage').fullpage({
-					anchors: ['introduction', 'groups'],
-					'slidesColor': ['white', '#939FAA'],
-					'autoScrolling': false
+				$('#fullpage_top').fullpage({
+					anchors: ['welcome'],
+					'slidesColor' : ['white'],
+					'autoScrolling' : false
 				});
 			});
 		</script>
 	</head>
 	<body>
+	<div id="fullpage_top">
 		<div class="section" id="welcome">
 			<div class="row">
 				<div class="col-md-12">
@@ -74,6 +75,61 @@
 			</div>
 			<i class="fa fa-arrow-down welcome_down_arrow"></i>
 		</div>
-		<h1>Goodbye cruel world!</h1>
+	</div>
+	<div class="scroll groups" style="background: #b5c33f;">
+		<div class="container">
+			<!--  Header text -->
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Symposium Groups</h1>
+				</div>
+			</div>
+
+			<!-- Individual group Entry - Text left aligned. -->
+			<div class="row center_row group_row">
+				<div class="col-md-9 center">
+					<div class="group_description" style="background: white; border-radius: 10px;">
+						<h2>Team Brangus - <a href="http://video.adultswim.com/check-it-out-with-dr-steve-brule/">Check it Out! with Dr. Steve Brule</a></h2>
+						<p>Go to bed early you doofus, ‘cause when you’re sleeping there’s no lonely times, just dreams.</p>
+						<p>I know it's prom time's coming up, and if you're a senior in high school you're thinking "What the heck am I gonna do for a date?" Take your sister, dum-dum, she's a girl.</p>
+					</div>
+				</div>
+				<div class="col-md-3 center" style="text-align: center">
+					<img src="./images/Team - Team Brangus.jpg" style="max-width: 100%" />
+				</div>
+			</div>
+			<!-- End Individual Group Entry -->
+
+			<!-- Individual group Entry - Text right aligned. -->
+			<div class="row center_row group_row">
+				<div class="col-md-3 center" style="text-align: center">
+					<img src="./images/Team - Team Brangus.jpg" style="max-width: 100%" />
+				</div>
+				<div class="col-md-9 center">
+					<div class="group_description" style="background: white; border-radius: 10px;">
+						<h2>Team Brangus - <a href="http://video.adultswim.com/check-it-out-with-dr-steve-brule/">Check it Out! with Dr. Steve Brule</a></h2>
+						<p>Go to bed early you doofus, ‘cause when you’re sleeping there’s no lonely times, just dreams.</p>
+						<p>I know it's prom time's coming up, and if you're a senior in high school you're thinking "What the heck am I gonna do for a date?" Take your sister, dum-dum, she's a girl.</p>
+					</div>
+				</div>
+			</div>
+			<!-- End Individual Group Entry -->
+		</div>
+	</div>
+	<div class="scroll groups" style="background: #cdbd42;">
+		<div class="container">
+			<div class="col-md-12" style="background: white;">
+				<h1 style="text-align: center">SPONSORS</h1>
+			</div>
+		</div>
+	</div>
+	<div id="fullpage_bottom">
+		<div class="section" id="symposium" style="background: #8a586e;">
+			<h1>Symposium details should be a one-pager, easily.</h1>
+		</div>
+		<div class="section" id="register" style="background: #b45340;">
+			<h1>Registration page will go here.</h1>
+		</div>
+	</div>
 	</body>
 </html>
