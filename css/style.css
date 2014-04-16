@@ -14,7 +14,7 @@ td {
 
 th {
 	font-size: 14pt;
-	font-weight: 570;
+	font-weight: 700;
 }
 
 h1 {
@@ -22,6 +22,11 @@ h1 {
 	text-align: center; 
 	color: white;
 	text-shadow: 1px 2px 2px black;
+}
+
+label {
+	font-size: 12pt;
+	font-weight: 500;
 }
 
 th:first-child {
@@ -168,6 +173,20 @@ span.intro {
 ***************************************************/
 .registration {
 	background: #b45340;
+}
+
+.registration p {
+	color: white;
+	font-size: 18pt;
+	font-weight: 300;
+	text-align: center;
+}
+
+.registration button { 
+	width: 95%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /**************************************************
