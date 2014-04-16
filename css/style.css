@@ -8,6 +8,32 @@ p {
 	font-size: 12pt;
 }
 
+td {
+	font-size: 12pt;
+}
+
+th {
+	font-size: 14pt;
+	font-weight: 570;
+}
+
+h1 {
+	padding: 10px;
+	text-align: center; 
+	color: white;
+	text-shadow: 1px 2px 2px black;
+}
+
+th:first-child {
+	text-align: center;
+	width: 150px;
+}
+
+td:first-child {
+	text-align: center;
+	width: 150px;
+}
+
 /**************************************************
 	Welcome/Header area specific CSS.
 ***************************************************/
@@ -24,6 +50,7 @@ img.welcome_graphic {
 h1.welcome_text {
 	color: #bc446a; 
 	font-weight: 300;
+	text-shadow: none;
 }
 
 div.welcome_selection_menu {
@@ -81,11 +108,10 @@ i.welcome_down_arrow {
 /**************************************************
 	Groups specific CSS.
 ***************************************************/
-.groups h1 {
-	padding: 10px;
-	text-align: center; 
-	color: white;
+.groups {
+	background: #b5c33f;
 }
+
 
 .group_row {
 	margin-top: 20px;
@@ -94,6 +120,54 @@ i.welcome_down_arrow {
 
 .group_description {
 	padding: 10px;
+	background: white; 
+	border-radius: 10px;
+	text-align: left;
+}
+
+/**************************************************
+	Groups specific CSS.
+***************************************************/
+.sponsors {
+	background: #cdbd42;
+}
+
+
+/**************************************************
+	Symposium specific CSS.
+***************************************************/
+.symposium {
+	background: #8a586e;
+}
+
+.symposium a {
+	font-weight: 500;
+	color: white;
+}
+
+.symposium p {
+	color: white;
+	font-size: 18pt;
+	font-weight: 300;
+}
+
+span.intro {
+	font-weight: 700;
+	width: 125px; 
+	display: inline-block;
+}
+
+@media (max-width: 1200px) {
+	#map {
+		width: 400px;
+	}
+}
+
+/**************************************************
+	Registration specific CSS.
+***************************************************/
+.registration {
+	background: #b45340;
 }
 
 /**************************************************
@@ -113,6 +187,7 @@ i.welcome_down_arrow {
 	display: table-cell;
     vertical-align:middle;
     float:none;
+    text-align: center;
 }
 
 #octagon {
@@ -120,6 +195,7 @@ i.welcome_down_arrow {
    height: 200px; 
    background: blue;
 }
+
 #octagon:before {
    height: 0;
    width: 0px;
@@ -131,6 +207,7 @@ i.welcome_down_arrow {
    border-left: 100px solid white; 
    border-right: 100px solid white; 
 }
+
 #octagon:after {
    height: 0;
    width: 0px;
