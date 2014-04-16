@@ -2,6 +2,7 @@
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
+    width: 100% !important;
 }
 
 p {
@@ -49,7 +50,7 @@ div.section {
 }
 
 img.welcome_graphic {
-	max-width: 100%;
+	/*max-width: 100%;*/
 }
 
 h1.welcome_text {
@@ -156,6 +157,10 @@ i.welcome_down_arrow {
 	font-weight: 300;
 }
 
+.symposium .group_description {
+    margin-bottom: 5%;
+}
+
 span.intro {
 	font-weight: 700;
 	width: 125px; 
@@ -189,12 +194,40 @@ span.intro {
 	margin-right: auto;
 }
 
+.registration .group_row {
+    margin-bottom: 5% !important;
+}
+
+/**************************************************
+    Footer CSS.
+***************************************************/
+#footer {
+    background-color: #555;
+}
+
+#footer-content {
+    color: #c6c6c6;
+    float: right;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
 /**************************************************
 	Misc CSS.
 ***************************************************/
 
 .table {
 	margin-bottom: 0px;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+.row {
+    margin: 0 !important;
 }
 
 /* Allows for vertical centering of row content */
@@ -242,6 +275,7 @@ span.intro {
    width: 0px;
    content:"";
    position: absolute; 
+   position: relative;
    /* quarter of the width or height */
    border-top: 50px;
    border-top-color: #b5c531;
@@ -305,7 +339,7 @@ span.intro {
    height: 0;
    width: 0px;
    content:"";
-   position: absolute; 
+   position: relative;
    /* quarter of the width or height */
    border-top: 50px;
    border-top-color: #b5c531;
