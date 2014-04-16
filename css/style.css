@@ -209,34 +209,189 @@ span.intro {
     text-align: center;
 }
 
-#octagon {
-   width: 200px; 
-   height: 200px; 
-   background: blue;
+/**************************************************
+	Hexagon CSS.
+***************************************************/
+
+.welcome_hex_container{
+	width:200px;
+	height:200px;
 }
 
-#octagon:before {
-   height: 0;
-   width: 0px;
-   content:"";
-   position: absolute;
-   /* quarter of the width or height */
-   border-bottom: 50px solid blue;
-   /* Half of the width or height */
-   border-left: 100px solid white; 
-   border-right: 100px solid white; 
+.small_hex_container{
+  width:700px;
+  height:200px;
+  position:relative;
+
 }
 
-#octagon:after {
+/* Container for half hexagon */
+.half_hexagon {
+   width: 25%; 
+   height: 50%; 
+   background: transparent;
+   float:right;
+ }
+
+ .half_hex_center_box{
+	height:50px;
+	position: relative;
+}
+.half_hexagon:after {
    height: 0;
    width: 0px;
    content:"";
    position: absolute; 
    /* quarter of the width or height */
-   border-bottom: 50px solid blue;
+   border-top: 50px;
+   border-top-color: #b5c531;
+   border-top-style: solid;
    /* Half of the width or height */
-   border-left: 100px solid white; 
-   border-right: 100px solid white;  
+   border-left: 88px;
+   border-left-color: rgba(255,255,255,0);
+   border-left-style: solid; 
+   border-right: 88px;
+   border-right-color: rgba(255,255,255,0);
+   border-right-style: solid;
+   margin-top: 0px;  
+}
+.half_hexagon_text {
+  /* Text size is 15% */
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Helvetica';
+  text-align: center;
+  position:absolute;
+  /* margin top is 42.5% and margin right is 10% */
+  margin-top: 20px;
+  margin-left: 25px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0px 1px rgba(255,255,255,.4);
+}
+
+/* Container for full hexagon */
+.hexagon {
+   width: 90%; 
+   height: 75%; 
+   background-color: white;
+   text-align: start;
+}
+
+.hex_center_box{
+	height:100px;
+	top:50px;
+	position: relative;
+}
+
+.hexagon:before {
+   height: 0;
+   width: 0px;
+   content:"";
+   position: absolute;
+   /* quarter of the width or height */
+   border-bottom: 50px;
+   border-bottom-color: #b5c531;
+   border-bottom-style: solid;
+   /* Half of the width or height */
+  border-left: 90px;
+   border-left-color: rgba(255,255,255,0);
+   border-left-style: solid; 
+   border-right: 90px;
+   border-right-color: rgba(255,255,255,0);
+   border-right-style: solid;
+}
+.hexagon:after {
+   height: 0;
+   width: 0px;
+   content:"";
+   position: absolute; 
+   /* quarter of the width or height */
+   border-top: 50px;
+   border-top-color: #b5c531;
+   border-top-style: solid;
+   /* Half of the width or height */
+   border-left: 90px;
+   border-left-color: rgba(255,255,255,0);
+   border-left-style: solid; 
+   border-right: 90px;
+   border-right-color: rgba(255,255,255,0);
+   border-right-style: solid;
    /* 80% of the width or height */
-   margin: 160px 0 0 0;
+   margin-top: 50px;  
+}
+.hexagon_text {
+  /* Text size is 15% */
+  color: white;
+  font-weight: 700;
+  font-size: 20pt;
+  text-align: center;
+  position:absolute;
+  /* margin top is 42.5% and margin right is 10% */
+  margin-top: 80px;
+  margin-left: 20px;
+}
+
+#right_hex_container{
+	float:left;
+}
+
+#left_hex_container{
+	display: inline-block;
+}
+
+/* Default color for all groups_hexagon */
+#groups_hexagon .half_hex_center_box{
+	background-color: #b5c531;
+}
+#groups_hexagon .hex_center_box{
+	background-color: #b5c531;
+}
+#groups_hexagon:before{
+	border-bottom-color: #b5c531;
+}
+#groups_hexagon:after{
+	border-top-color: #b5c531;
+}
+
+/* Default color for all sponsors_hexagon */
+#sponsors_hexagon .half_hex_center_box{
+	background-color: #cebe35;
+}
+#sponsors_hexagon .hex_center_box{
+	background-color: #cebe35;
+}
+#sponsors_hexagon:before{
+	border-bottom-color: #cebe35;
+}
+#sponsors_hexagon:after{
+	border-top-color: #cebe35;
+}
+
+/* Default color for all symposium_hexagon */
+#symposium_hexagon .half_hex_center_box{
+	background-color: #8b576e;
+}
+#symposium_hexagon .hex_center_box{
+	background-color: #8b576e;
+}
+#symposium_hexagon:before{
+	border-bottom-color: #8b576e;
+}
+#symposium_hexagon:after{
+	border-top-color: #8b576e;
+}
+
+/* Default color for all register_hexagon */
+#register_hexagon .half_hex_center_box{
+	background-color: #b6533c;
+}
+#register_hexagon .hex_center_box{
+	background-color: #b6533c;
+}
+#register_hexagon:before{
+	border-bottom-color: #b6533c;
+}
+#register_hexagon:after{
+	border-top-color: #b6533c;
 }

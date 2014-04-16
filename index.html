@@ -28,7 +28,6 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.js"></script>
 		<script type="text/javascript" src="./js/jquery.fullPage.js"></script>
-
 		<script>
 			$(document).ready(function() {
 				// Activate the full page capabilities.
@@ -39,6 +38,101 @@
 				});
 			});
 		</script>
+		<script>
+$(function(){
+	$('.small_hex_container').children('#groups_hexagon').hide();
+	$('.small_hex_container').children('#register_hexagon').hide();
+	$('.small_hex_container').children('#symposium_hexagon').hide();
+	$('.small_hex_container').children('#sponsors_hexagon').hide();
+
+	/* Makes hex shapes the correct dimensions regardless of size */
+	function hex(){
+		var width = $('.welcome_hex_container').css('width');
+		var height = $('.welcome_hex_container').css('height');
+		var height = parseInt(height, 10);
+		var tMargTop = height * .15;
+		var tMargLeft = height * .05;
+		var hexMargTop = height * .25;
+		var borderSides = height * .45;
+		var borderTopBot = (height * .25)/2;
+		var textSize = height * .15;
+
+		$('.hexagon_text').css('font-size', textSize);
+		$('.hexagon_text').css('margin-top', tMargTop);
+		$('#symposium_hexagon .hexagon_text').css('margin-left', (height*.05));
+		$('#groups_hexagon .hexagon_text').css('margin-left', (height*.15));
+		$('#sponsors_hexagon .hexagon_text').css('margin-left', (height*.075));
+		$('#register_hexagon .hexagon_text').css('margin-left', (height*.125));
+		$('.hexagon').append('<style>#hexagon:after{ border-left:' + borderSides +'; border-left-color: white; border-left-style: solid; border-right:' + borderSides +'; border-right-color: white; border-right-style: solid; border-top:' + borderTopBot +'; border-top-color: #b5c531; border-top-style: solid; margin-top:' + hexMargTop + 'px ;} </style> ');
+
+		$('.hexagon').append('<style>#hexagon:before{ border-left:' + borderSides +'; border-left-color: white; border-left-style: solid; border-right:' + borderSides +'; border-right-color: white; border-right-style: solid; border-bottom:' + borderTopBot +'; border-bottom-color: #b5c531; border-bottom-style: solid; } </style> ');
+
+
+		$('#symposium_hexagon .half_hexagon_text').css('margin-left', (height*.05));
+		$('#groups_hexagon .half_hexagon_text').css('margin-left', (height*.15));
+		$('#sponsors_hexagon .half_hexagon_text').css('margin-left', (height*.075));
+		$('#register_hexagon .half_hexagon_text').css('margin-left', (height*.125));
+  		$('.half_hexagon_text').css('font-size', (height*0.125));
+  		$('.half_hexagon_text').css('margin-top', (height * .1));
+  		hexMargTop = 
+  		$('.halfHexagon').append('<style>.halfHexagon:after{ border-left:' + borderSides +'; border-left-color: white; border-left-style: solid; border-right:' + borderSides +'; border-right-color: white; border-right-style: solid; border-top:' + borderTopBot +'; border-top-color: #b5c531; border-top-style: solid;} </style> ');
+	} //end hex function
+
+	hex();
+
+	$('#sponsors_hexagon').click(function(){
+		var color = $(this).css('background-color');
+		changePage();
+		var p = $(".sponsors").position();
+		$('html, body').animate({scrollTop: $('.sponsors').offset().top}, 800);
+	});// end sponsors click
+
+	$('#groups_hexagon').click(function(){
+		var color = $(this).css('background-color');
+		changePage();
+		var p = $(".groups").position();
+		$('html, body').animate({scrollTop: $('.groups').offset().top}, 800);
+	});// end groups click
+
+	$('#symposium_hexagon').click(function(){
+		var color = $(this).css('background-color');
+		changePage();
+		var p = $(".symposium").position();
+		$('html, body').animate({scrollTop: $('.symposium').offset().top}, 800);
+		showSmallMenu();
+	});// end symposium click
+
+	$('#register_hexagon').click(function(){
+		var color = $(this).css('background-color');
+		changePage(color);
+		var p = $(".registration").position();
+		$('html, body').animate({scrollTop: $('.registration').offset().top}, 800);
+	});// end register click
+
+	function changePage(){
+		$('#sponsors_hexagon').animate({ 'margin-left':  '-=800px'
+                }, 500);
+		$('#symposium_hexagon').animate({ 'margin-left':  '+=800px'
+                }, 500).delay(20);
+		$('#groups_hexagon').animate({ 'margin-left':  '-=600px'
+                }, 500);
+		$('#register_hexagon').animate({ 'margin-left':  '+=600px'
+                }, 500);
+	}
+
+	function showSmallMenu(){
+		
+		var delay = 500;
+		$('.small_hex_container').children('#groups_hexagon').delay(delay).fadeIn(800);
+		delay += 500;
+		$('.small_hex_container').children('#sponsors_hexagon').delay(delay).fadeIn(800)
+		delay += 500;
+		$('.small_hex_container').children('#symposium_hexagon').delay(delay).fadeIn(800);
+		delay += 500;
+		$('.small_hex_container').children('#register_hexagon').delay(delay).fadeIn(800);
+	}
+});// end ready
+</script>
 	</head>
 	<body>
 	<div id="fullpage_top">
@@ -53,24 +147,36 @@
 			</div>
 			<div class="welcome_selection_menu row">
 				<div class="col-md-6 welcome_group_and_sponsors">
-					<span class="welcome_selection_button">
-						<span class="welcome_button_text" style="left: 50px;">GROUPS</span>
-						<img id="welcome-groups" src="./images/Menu Hexagon - Green.png" />
-					</span>
-					<span class="welcome_selection_button">
-						<span class="welcome_button_text" style="left: 35px;">SPONSORS</span>
-						<img id="welcome-sponsors" src="./images/Menu Hexagon - Yellow.png"  />
-					</span>
+					<div class="welcome_hex_container" id="left_hex_container">
+						<div class="hexagon" id="sponsors_hexagon">
+							<div class="hex_center_box">
+								<div class ="hexagon_text">SPONSORS</div>
+						    </div>
+						</div>
+					</div>
+					<div class="welcome_hex_container" id="left_hex_container">
+						<div class="hexagon" id="groups_hexagon">
+							<div class="hex_center_box">
+								<div class ="hexagon_text">GROUPS</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6 welcome_symposium_and_register">
-					<span class="welcome_selection_button">
-						<span class="welcome_button_text" style="left: 30px;">SYMPOSIUM</span>
-						<img id="welcome-symposium" src="./images/Menu Hexagon - Purple.png"  />
-					</span>
-					<span class="welcome_selection_button">
-						<span class="welcome_button_text" style="left: 40px;">REGISTER</span>
-						<img id="welcome-register" src="./images/Menu Hexagon - Red.png"/>
-					</span>
+					<div class="welcome_hex_container" id="right_hex_container">
+						<div class="hexagon" id="symposium_hexagon">
+							<div class="hex_center_box">
+								<div class ="hexagon_text">SYMPOSIUM</div>
+							</div>
+						</div>
+					</div>
+					<div class="welcome_hex_container" id="right_hex_container">
+						<div class="hexagon" id="register_hexagon">
+							<div class="hex_center_box">
+								<div class ="hexagon_text">REGISTER</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<i class="fa fa-arrow-down welcome_down_arrow"></i>
@@ -117,7 +223,7 @@
 		</div>
 	</div>
 
-	<div class="scroll sponsors">
+	<div class="scroll sponsors" id="sponsor_scroll">
 		<div class="container">
 			<div class="col-md-12">
 				<h1>Sponsors</h1>
@@ -157,6 +263,28 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
+				<div class="small_hex_container" id="smallHex">
+				<div class="half_hexagon" id="groups_hexagon">
+					<div class="half_hex_center_box">
+						<div class="half_hexagon_text"> GROUPS </div>
+					</div>
+				</div>
+				<div class="half_hexagon" id="sponsors_hexagon">
+					<div class="half_hex_center_box">	
+						<div class="half_hexagon_text"> SPONSORS </div>
+					</div>
+				</div>
+				<div class="half_hexagon" id="symposium_hexagon">
+					<div class="half_hex_center_box">
+						<div class="half_hexagon_text"> SYMPOSIUM </div>
+					</div>
+				</div>
+				<div class="half_hexagon" id="register_hexagon">
+					<div class="half_hex_center_box">
+						<div class="half_hexagon_text"> REGISTER </div>
+					</div>
+				</div>
+			</div>
 					<h1>Symposium Details</h1>
 				</div>
 			</div>
