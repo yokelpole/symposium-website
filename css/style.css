@@ -253,7 +253,7 @@ span.intro {
 
 .small_hex_container{
   width:700px;
-  height:200px;
+  height:100px;
   position:relative;
 
 }
@@ -366,7 +366,7 @@ span.intro {
 }
 
 #right_hex_container{
-	float:left;
+	display: inline-block;
 }
 
 #left_hex_container{

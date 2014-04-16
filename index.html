@@ -44,7 +44,7 @@ $(function(){
 	$('.small_hex_container').children('#register_hexagon').hide();
 	$('.small_hex_container').children('#symposium_hexagon').hide();
 	$('.small_hex_container').children('#sponsors_hexagon').hide();
-
+	var which_hex = '';
 	/* Makes hex shapes the correct dimensions regardless of size */
 	function hex(){
 		var width = $('.welcome_hex_container').css('width');
@@ -72,75 +72,111 @@ $(function(){
 		$('#groups_hexagon .half_hexagon_text').css('margin-left', (height*.15));
 		$('#sponsors_hexagon .half_hexagon_text').css('margin-left', (height*.075));
 		$('#register_hexagon .half_hexagon_text').css('margin-left', (height*.125));
+		$('.homepage_hexagon').children('.half_hexagon_text').css('margin-left', (height*.075));
   		$('.half_hexagon_text').css('font-size', (height*0.125));
-  		$('.half_hexagon_text').css('margin-top', (height * .1));
-  		hexMargTop = 
+  		$('.half_hexagon_text').css('margin-top', (height * .1)); 
   		$('.halfHexagon').append('<style>.halfHexagon:after{ border-left:' + borderSides +'; border-left-color: white; border-left-style: solid; border-right:' + borderSides +'; border-right-color: white; border-right-style: solid; border-top:' + borderTopBot +'; border-top-color: #b5c531; border-top-style: solid;} </style> ');
 	} //end hex function
 
 	hex();
 
 	$('#sponsors_hexagon').click(function(){
-		var color = $(this).css('background-color');
-		changePage();
+		which_hex = 'sponsors';
+		big_hex_slide_out();
 		var p = $(".sponsors").position();
 		$('html, body').animate({scrollTop: $('.sponsors').offset().top}, 800);
+		showSmallMenu(which_hex);
 	});// end sponsors click
 
 	$('#groups_hexagon').click(function(){
-		var color = $(this).css('background-color');
-		changePage();
+		which_hex = 'groups';
+		big_hex_slide_out();
 		var p = $(".groups").position();
 		$('html, body').animate({scrollTop: $('.groups').offset().top}, 800);
+		showSmallMenu(which_hex);
 	});// end groups click
 
 	$('#symposium_hexagon').click(function(){
-		var color = $(this).css('background-color');
-		changePage();
+		which_hex = 'symposium';
+		big_hex_slide_out();
 		var p = $(".symposium").position();
 		$('html, body').animate({scrollTop: $('.symposium').offset().top}, 800);
-		showSmallMenu();
+		showSmallMenu(which_hex);
 	});// end symposium click
 
 	$('#register_hexagon').click(function(){
-		var color = $(this).css('background-color');
-		changePage(color);
+		which_hex = 'register';
+		big_hex_slide_out();
 		var p = $(".registration").position();
 		$('html, body').animate({scrollTop: $('.registration').offset().top}, 800);
+		showSmallMenu(which_hex);
 	});// end register click
 
-	function changePage(){
-		$('#sponsors_hexagon').animate({ 'margin-left':  '-=800px'
+
+
+	function big_hex_slide_out(){
+		$('#sponsors_hexagon').animate({ 'margin-left':  '-=600px'
                 }, 500);
 		$('#symposium_hexagon').animate({ 'margin-left':  '+=800px'
-                }, 500).delay(20);
-		$('#groups_hexagon').animate({ 'margin-left':  '-=600px'
+                }, 500).delay(100);
+		$('#groups_hexagon').animate({ 'margin-left':  '-=800px'
                 }, 500);
 		$('#register_hexagon').animate({ 'margin-left':  '+=600px'
                 }, 500);
 	}
 
-	function showSmallMenu(){
-		
+	function big_hex_slide_in(){
+		$('#sponsors_hexagon').animate({ 'margin-left':  '+=600px'
+                }, 500);
+		$('#symposium_hexagon').animate({ 'margin-left':  '-=800px'
+                }, 500).delay(100);
+		$('#groups_hexagon').animate({ 'margin-left':  '+=800px'
+                }, 500);
+		$('#register_hexagon').animate({ 'margin-left':  '-=600px'
+                }, 500);
+	}
+
+	function showSmallMenu(which_hex){
+		$('.small_hex_container').children().removeClass('homepage_hexagon');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').children('.half_hex_center_box').addClass('homepage_hexagon');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').children('.half_hex_center_box').css('background-color', 'black');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').append('<style> .small_hex_container #'+which_hex+'_hexagon:after{ border-top-color: black }');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').children('.homepage_hexagon').children('.half_hexagon_text').css('margin-left', '15px');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').children('.half_hex_center_box').children('.half_hexagon_text').text('HOMEPAGE');
 		var delay = 500;
-		$('.small_hex_container').children('#groups_hexagon').delay(delay).fadeIn(800);
+		$('#'+which_hex).children('#groups_hexagon').delay(delay).fadeIn(800);
 		delay += 500;
-		$('.small_hex_container').children('#sponsors_hexagon').delay(delay).fadeIn(800)
+		$('#'+which_hex).children('#sponsors_hexagon').delay(delay).fadeIn(800)
 		delay += 500;
-		$('.small_hex_container').children('#symposium_hexagon').delay(delay).fadeIn(800);
+		$('#'+which_hex).children('#symposium_hexagon').delay(delay).fadeIn(800);
 		delay += 500;
-		$('.small_hex_container').children('#register_hexagon').delay(delay).fadeIn(800);
+		$('#'+which_hex).children('#register_hexagon').delay(delay).fadeIn(800);
+	}
+
+	$('.half_hexagon').click(function(){
+		var p = $(".welcome_graphic").position();
+		$('html, body').animate({scrollTop: $('.welcome_graphic').offset().top}, 800).delay(1000);
+		big_hex_slide_in();
+	}); //end homepage click
+
+	function hideSmallMenu(which_hex){
+		$('.small_hex_container').children().fadeOut(500);
+		$('.homepage_hexagon').removeClass('homepage_hexagon');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').children('.half_hex_center_box').addClass('homepage_hexagon');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').children('.half_hex_center_box').css('background-color', 'black');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').append('<style> .small_hex_container #'+which_hex+'_hexagon:after{ border-top-color: black }');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').children('.homepage_hexagon').children('.half_hexagon_text').css('margin-left', '15px');
+		$('.small_hex_container').children('#'+which_hex+'_hexagon').children('.half_hex_center_box').children('.half_hexagon_text').text('HOMEPAGE');
 	}
 });// end ready
 </script>
 	</head>
 	<body>
-    <div class="container-fluid">
 	<div id="fullpage_top">
 		<div class="section" id="welcome">
 			<div class="row">
 				<div class="col-md-12">
-					<img class="welcome_graphic img-responsive" src="./images/Header - Complete.png"  />
+					<img class="welcome_graphic" src="./images/Header - Complete.png"  />
 				</div>
 			</div>
 			<div class="row">
@@ -188,6 +224,28 @@ $(function(){
 			<!--  Header text -->
 			<div class="row">
 				<div class="col-md-12">
+				<div class="small_hex_container" id="groups">
+					<div class="half_hexagon" id="groups_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> GROUPS </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="sponsors_hexagon">
+						<div class="half_hex_center_box">	
+							<div class="half_hexagon_text"> SPONSORS </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="symposium_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> SYMPOSIUM </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="register_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> REGISTER </div>
+						</div>
+					</div>
+				</div>
 					<h1>Symposium Groups</h1>
 				</div>
 			</div>
@@ -227,6 +285,28 @@ $(function(){
 	<div class="scroll sponsors" id="sponsor_scroll">
 		<div class="container">
 			<div class="col-md-12">
+				<div class="small_hex_container" id="sponsors">
+					<div class="half_hexagon" id="groups_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> GROUPS </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="sponsors_hexagon">
+						<div class="half_hex_center_box">	
+							<div class="half_hexagon_text"> SPONSORS </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="symposium_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> SYMPOSIUM </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="register_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> REGISTER </div>
+						</div>
+					</div>
+				</div>
 				<h1>Sponsors</h1>
 			</div>
 
@@ -264,28 +344,28 @@ $(function(){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-				<div class="small_hex_container" id="smallHex">
-				<div class="half_hexagon" id="groups_hexagon">
-					<div class="half_hex_center_box">
-						<div class="half_hexagon_text"> GROUPS </div>
+				<div class="small_hex_container" id="symposium">
+					<div class="half_hexagon" id="groups_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> GROUPS </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="sponsors_hexagon">
+						<div class="half_hex_center_box">	
+							<div class="half_hexagon_text"> SPONSORS </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="symposium_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> SYMPOSIUM </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="register_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> REGISTER </div>
+						</div>
 					</div>
 				</div>
-				<div class="half_hexagon" id="sponsors_hexagon">
-					<div class="half_hex_center_box">	
-						<div class="half_hexagon_text"> SPONSORS </div>
-					</div>
-				</div>
-				<div class="half_hexagon" id="symposium_hexagon">
-					<div class="half_hex_center_box">
-						<div class="half_hexagon_text"> SYMPOSIUM </div>
-					</div>
-				</div>
-				<div class="half_hexagon" id="register_hexagon">
-					<div class="half_hex_center_box">
-						<div class="half_hexagon_text"> REGISTER </div>
-					</div>
-				</div>
-			</div>
 					<h1>Symposium Details</h1>
 				</div>
 			</div>
@@ -343,6 +423,28 @@ $(function(){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
+				<div class="small_hex_container" id="registration">
+					<div class="half_hexagon" id="groups_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> GROUPS </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="sponsors_hexagon">
+						<div class="half_hex_center_box">	
+							<div class="half_hexagon_text"> SPONSORS </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="symposium_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> SYMPOSIUM </div>
+						</div>
+					</div>
+					<div class="half_hexagon" id="register_hexagon">
+						<div class="half_hex_center_box">
+							<div class="half_hexagon_text"> REGISTER </div>
+						</div>
+					</div>
+				</div>
 					<h1>Registration</h1>
 					<p>Are you interested in attending? Please let us know!</p>
 				</div>
@@ -369,9 +471,9 @@ $(function(){
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="phone" class="col-sm-2 control-label">Phone #</label>
+							<label for="email" class="col-sm-2 control-label">Phone #</label>
 							<div class="col-sm-10">
-								<input type="phone" class="form-control" id="phone" placeholder="Phone #" />
+								<input type="phone" class="form-control" id="email" placeholder="Phone #" />
 							</div>
 						</div>
 						<button type="button" class="btn btn-lg btn-primary">Register</button>
@@ -380,13 +482,5 @@ $(function(){
 			</div>
 		</div>
 	</div>
-    <div class="footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <span id="footer-content">2014 Camosun College • Victoria BC, Canada </span>
-            </div>
-        </div>
-    </div>
-    </div>
 	</body>
 </html>
