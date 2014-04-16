@@ -114,3 +114,33 @@ i.welcome_down_arrow {
     vertical-align:middle;
     float:none;
 }
+
+#octagon {
+   width: 200px; 
+   height: 200px; 
+   background: blue;
+}
+#octagon:before {
+   height: 0;
+   width: 0px;
+   content:"";
+   position: absolute;
+   /* quarter of the width or height */
+   border-bottom: 50px solid blue;
+   /* Half of the width or height */
+   border-left: 100px solid white; 
+   border-right: 100px solid white; 
+}
+#octagon:after {
+   height: 0;
+   width: 0px;
+   content:"";
+   position: absolute; 
+   /* quarter of the width or height */
+   border-bottom: 50px solid blue;
+   /* Half of the width or height */
+   border-left: 100px solid white; 
+   border-right: 100px solid white;  
+   /* 80% of the width or height */
+   margin: 160px 0 0 0;
+}
