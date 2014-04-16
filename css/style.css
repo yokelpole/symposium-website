@@ -275,7 +275,6 @@ span.intro {
    width: 0px;
    content:"";
    position: absolute; 
-   position: relative;
    /* quarter of the width or height */
    border-top: 50px;
    border-top-color: #b5c531;
@@ -339,7 +338,7 @@ span.intro {
    height: 0;
    width: 0px;
    content:"";
-   position: relative;
+   position: absolute;
    /* quarter of the width or height */
    border-top: 50px;
    border-top-color: #b5c531;
