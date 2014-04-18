@@ -2,7 +2,7 @@
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
-    width: 100% !important;
+    overflow-x: hidden !important;
 }
 
 p {
@@ -50,13 +50,15 @@ div.section {
 }
 
 img.welcome_graphic {
-	/*max-width: 100%;*/
+	max-width: 100%;
+	padding-top: 10px;
 }
 
 h1.welcome_text {
 	color: #bc446a; 
 	font-weight: 300;
 	text-shadow: none;
+	padding: 0px;
 }
 
 div.welcome_selection_menu {
@@ -93,8 +95,8 @@ div.welcome_symposium_and_register {
 }
 
 i.welcome_down_arrow {
-	font-size:72pt; 
-	margin-top: 20px;
+	font-size:60pt; 
+	margin-top: 10px;
 }
 
 /* Media query to make selection buttons work w/ responsive design */
@@ -120,8 +122,8 @@ i.welcome_down_arrow {
 
 
 .group_row {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .group_description {
@@ -198,6 +200,11 @@ span.intro {
     margin-bottom: 5% !important;
 }
 
+.form-group {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 /**************************************************
     Footer CSS.
 ***************************************************/
@@ -227,7 +234,8 @@ span.intro {
 }
 
 .row {
-    margin: 0 !important;
+    /*margin: 0 !important;*/
+    /* I commented this out as it messed the formatting for all rows. !important is dangerous */
 }
 
 /* Allows for vertical centering of row content */
