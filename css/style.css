@@ -111,6 +111,11 @@ i.welcome_down_arrow {
 		text-align: center;
 		padding-left: 15px;
 	}
+
+	.tableCell {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 
 /**************************************************
