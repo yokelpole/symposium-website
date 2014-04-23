@@ -276,7 +276,7 @@ span.intro {
    width: 25%; 
    height: 50%; 
    background: transparent;
-   float:right;
+   float:left;
  }
 
  .half_hex_center_box{
