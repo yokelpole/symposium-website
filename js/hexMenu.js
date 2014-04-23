@@ -42,7 +42,7 @@ $(function(){
 
 	hex();
 
-	$('#sponsors_hexagon').click(function(){
+	$('.sponsors_hexagon').click(function(){
 		which_hex = 'sponsors';
 		big_hex_slide_out();
 		var p = $(".sponsors").position();
@@ -50,7 +50,7 @@ $(function(){
 		showSmallMenu(which_hex);
 	});// end sponsors click
 
-	$('#groups_hexagon').click(function(){
+	$('.groups_hexagon').click(function(){
 		which_hex = 'groups';
 		big_hex_slide_out();
 		var p = $(".groups").position();
@@ -58,7 +58,7 @@ $(function(){
 		showSmallMenu(which_hex);
 	});// end groups click
 
-	$('#symposium_hexagon').click(function(){
+	$('.symposium_hexagon').click(function(){
 		which_hex = 'symposium';
 		big_hex_slide_out();
 		var p = $(".symposium").position();
@@ -66,7 +66,7 @@ $(function(){
 		showSmallMenu(which_hex);
 	});// end symposium click
 
-	$('#register_hexagon').click(function(){
+	$('.register_hexagon').click(function(){
 		which_hex = 'register';
 		big_hex_slide_out();
 		var p = $(".registration").position();
