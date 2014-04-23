@@ -41,6 +41,29 @@ td:first-child {
 }
 
 /**************************************************
+	Floating menubar specific CSS.
+***************************************************/
+#floating_menu {
+	top: -100px;
+}
+
+.small_hex_container{
+  	width:700px;
+  	height:100px;
+	position: fixed; 
+	float: right; 
+	z-index: 5; 
+	right: 5px;
+}
+
+/* Media query to make menubar  work w/ responsive design */
+@media (max-width: 767px) {
+	.small_hex_container {
+		display: none;
+	}
+}
+
+/**************************************************
 	Welcome/Header area specific CSS.
 ***************************************************/
 
@@ -257,16 +280,6 @@ span.intro {
 .welcome_hex_container{
 	width:200px;
 	height:200px;
-}
-
-.small_hex_container{
-  	width:700px;
-  	height:100px;
-	position: fixed; 
-	float: right; 
-	z-index: 5; 
-	right: 5px;
-
 }
 
 /* Container for half hexagon */
