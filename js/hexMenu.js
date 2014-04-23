@@ -74,27 +74,25 @@ $(function(){
 		showSmallMenu(which_hex);
 	});// end register click
 
-
-
 	function big_hex_slide_out(){
-		$('#sponsors_hexagon').animate({ 'margin-left':  '-=600px'
+		$('#sponsors_hexagon_big').animate({ 'margin-left':  '-=600px'
                 }, 500);
-		$('#symposium_hexagon').animate({ 'margin-left':  '+=800px'
+		$('#symposium_hexagon_big').animate({ 'margin-left':  '+=800px'
                 }, 500).delay(100);
-		$('#groups_hexagon').animate({ 'margin-left':  '-=800px'
+		$('#groups_hexagon_big').animate({ 'margin-left':  '-=800px'
                 }, 500);
-		$('#register_hexagon').animate({ 'margin-left':  '+=600px'
+		$('#register_hexagon_big').animate({ 'margin-left':  '+=600px'
                 }, 500);
 	}
 
 	function big_hex_slide_in(){
-		$('#sponsors_hexagon').animate({ 'margin-left':  '+=600px'
+		$('#sponsors_hexagon_big').animate({ 'margin-left':  '+=600px'
                 }, 500);
-		$('#symposium_hexagon').animate({ 'margin-left':  '-=800px'
+		$('#symposium_hexagon_big').animate({ 'margin-left':  '-=800px'
                 }, 500).delay(100);
-		$('#groups_hexagon').animate({ 'margin-left':  '+=800px'
+		$('#groups_hexagon_big').animate({ 'margin-left':  '+=800px'
                 }, 500);
-		$('#register_hexagon').animate({ 'margin-left':  '-=600px'
+		$('#register_hexagon_big').animate({ 'margin-left':  '-=600px'
                 }, 500);
 	}
 

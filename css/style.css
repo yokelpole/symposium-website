@@ -238,11 +238,6 @@ span.intro {
     width: 100% !important;
 }
 
-.row {
-    /*margin: 0 !important;*/
-    /* I commented this out as it messed the formatting for all rows. !important is dangerous */
-}
-
 /* Allows for vertical centering of row content */
 .center_row {
 	display: table;

@@ -47,22 +47,22 @@
 	<body>
 	<div id="hex_menu">
 		<div class="small_hex_container" id="symposium">
-			<div class="half_hexagon groups_hexagon">
+			<div class="half_hexagon groups_hexagon" id="groups_hexagon_small">
 				<div class="half_hex_center_box">
 					<div class="half_hexagon_text"> GROUPS </div>
 				</div>
 			</div>
-			<div class="half_hexagon sponsors_hexagon">
+			<div class="half_hexagon sponsors_hexagon" id="sponsors_hexagon_small">
 				<div class="half_hex_center_box">	
 					<div class="half_hexagon_text"> SPONSORS </div>
 				</div>
 			</div>
-			<div class="half_hexagon symposium_hexagon">
+			<div class="half_hexagon symposium_hexagon" id="symposium_hexagon_small">
 				<div class="half_hex_center_box">
 					<div class="half_hexagon_text"> SYMPOSIUM </div>
 				</div>
 			</div>
-			<div class="half_hexagon register_hexagon">
+			<div class="half_hexagon register_hexagon" id="register_hexagon_small">
 				<div class="half_hex_center_box">
 					<div class="half_hexagon_text"> REGISTER </div>
 				</div>
@@ -83,14 +83,14 @@
 			<div class="welcome_selection_menu row">
 				<div class="col-md-6 welcome_group_and_sponsors">
 					<div class="welcome_hex_container" id="left_hex_container">
-						<div class="hexagon groups_hexagon">
+						<div class="hexagon groups_hexagon" id="groups_hexagon_big">
 							<div class="hex_center_box">
 								<div class ="hexagon_text">GROUPS</div>
 							</div>
 						</div>
 					</div>
 					<div class="welcome_hex_container" id="left_hex_container">
-						<div class="hexagon sponsors_hexagon">
+						<div class="hexagon sponsors_hexagon" id="sponsors_hexagon_big">
 							<div class="hex_center_box">
 								<div class ="hexagon_text">SPONSORS</div>
 						    </div>
@@ -99,14 +99,14 @@
 				</div>
 				<div class="col-md-6 welcome_symposium_and_register">
 					<div class="welcome_hex_container" id="right_hex_container">
-						<div class="hexagon symposium_hexagon">
+						<div class="hexagon symposium_hexagon" id="symposium_hexagon_big">
 							<div class="hex_center_box">
 								<div class ="hexagon_text">SYMPOSIUM</div>
 							</div>
 						</div>
 					</div>
 					<div class="welcome_hex_container" id="right_hex_container">
-						<div class="hexagon register_hexagon">
+						<div class="hexagon register_hexagon" id="register_hexagon_big">
 							<div class="hex_center_box">
 								<div class ="hexagon_text">REGISTER</div>
 							</div>
@@ -128,14 +128,14 @@
 
 			<!-- Individual group Entry - Text left aligned. -->
 			<div class="row center_row group_row">
-				<div class="col-md-9 center">
+				<div class="col-xs-9 center">
 					<div class="group_description">
 						<h2>Team Brangus - <a href="http://video.adultswim.com/check-it-out-with-dr-steve-brule/">Check it Out! with Dr. Steve Brule</a></h2>
 						<p>Go to bed early you doofus, ‘cause when you’re sleeping there’s no lonely times, just dreams.</p>
 						<p>I know it's prom time's coming up, and if you're a senior in high school you're thinking "What the heck am I gonna do for a date?" Take your sister, dum-dum, she's a girl.</p>
 					</div>
 				</div>
-				<div class="col-md-3 center">
+				<div class="col-xs-3 center">
 					<img src="./images/Team - Team Brangus.jpg" style="max-width: 100%" />
 				</div>
 			</div>
@@ -143,10 +143,10 @@
 
 			<!-- Individual group Entry - Text right aligned. -->
 			<div class="row center_row group_row">
-				<div class="col-md-3 center">
+				<div class="col-xs-3 center">
 					<img src="./images/Team - Team Brangus.jpg" style="max-width: 100%" />
 				</div>
-				<div class="col-md-9 center">
+				<div class="col-xs-9 center">
 					<div class="group_description">
 						<h2>Team Brangus - <a href="http://video.adultswim.com/check-it-out-with-dr-steve-brule/">Check it Out! with Dr. Steve Brule</a></h2>
 						<p>Go to bed early you doofus, ‘cause when you’re sleeping there’s no lonely times, just dreams.</p>
@@ -160,19 +160,21 @@
 
 	<div class="scroll sponsors" id="sponsor_scroll">
 		<div class="container">
-			<div class="col-md-12">
-				<h1>Sponsors</h1>
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Sponsors</h1>
+				</div>
 			</div>
 
 			<!-- Individual group Entry - Text left aligned. -->
 			<div class="row center_row group_row">
-				<div class="col-md-9 center">
+				<div class="col-xs-9 center">
 					<div class="group_description">
 						<h2><a href="http://gaben.tv/">Gaben</a></h2>
 						<p>Gabe Newell, often nicknamed Gaben, is the co-founder and managing director of video game developer Valve Corporation. As a prominent figure in the video gaming industry, Newell has developed a sizable reputation on the Internet for his controversial views on console gaming, his large physique, and relation to Valve series such as Counter-Strike, Half-Life, Left 4 Dead, Portal and Team Fortress. Due to the constant delay of Half-Life 2: Episode Three and some of the features on Team Fortress 2, he has also gained a reputation as a troll.</p>
 					</div>
 				</div>
-				<div class="col-md-3 center">
+				<div class="col-xs-3 center">
 					<img src="./images/Sponsor - Gaben.jpg" style="max-width: 100%" />
 				</div>
 			</div>
@@ -180,10 +182,10 @@
 
 			<!-- Individual group Entry - Text right aligned. -->
 			<div class="row center_row group_row">
-				<div class="col-md-3 center">
+				<div class="col-xs-3 center">
 					<img src="./images/Sponsor - Gaben.jpg" style="max-width: 100%" />
 				</div>
-				<div class="col-md-9 center">
+				<div class="col-xs-9 center">
 					<div class="group_description">
 						<h2><a href="http://gaben.tv/">Gaben</a></h2>
 						<p>Gabe Newell, often nicknamed Gaben, is the co-founder and managing director of video game developer Valve Corporation. As a prominent figure in the video gaming industry, Newell has developed a sizable reputation on the Internet for his controversial views on console gaming, his large physique, and relation to Valve series such as Counter-Strike, Half-Life, Left 4 Dead, Portal and Team Fortress. Due to the constant delay of Half-Life 2: Episode Three and some of the features on Team Fortress 2, he has also gained a reputation as a troll.</p>
@@ -260,7 +262,7 @@
 				</div>
 			</div>
 			<div class="row group_row">
-				<div class="group_description col-md-12">
+				<div class="group_description col-md-offset-2 col-md-8">
 					<form class="form-horizontal">
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">Name</label>
