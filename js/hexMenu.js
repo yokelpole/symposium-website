@@ -46,20 +46,27 @@ $(function() {
     // Handler for menu item clicks.
     $('.half_hexagon, .hexagon').click(function(clicked_hexagon) {
         var class_name = clicked_hexagon.currentTarget.classList[1];
+        var site_is_narrow = $('.small_hex_container').css('right') === '0px' ? true : false;
+        var offset = site_is_narrow ? 0 : $('.small_hex_container').height();
 
         switch (class_name) {
             case 'groups_hexagon':
-                $('html, body').animate({scrollTop: $('.groups').offset().top - $('.small_hex_container').height()}, 800);
+                $('html, body').animate({scrollTop: $('.groups').offset().top - offset}, 800);
                 break;
             case 'sponsors_hexagon':
-                $('html, body').animate({scrollTop: $('.sponsors').offset().top - $('.small_hex_container').height()}, 800);
+                $('html, body').animate({scrollTop: $('.sponsors').offset().top - offset}, 800);
                 break;
             case 'symposium_hexagon':
-                $('html, body').animate({scrollTop: $('.symposium').offset().top - $('.small_hex_container').height()}, 800);
+                $('html, body').animate({scrollTop: $('.symposium').offset().top - offset}, 800);
                 break;
             case 'register_hexagon':
-                $('html, body').animate({scrollTop: $('.registration').offset().top - $('.small_hex_container').height()}, 800);
+                $('html, body').animate({scrollTop: $('.registration').offset().top - offset}, 800);
                 break;
+        }
+
+        if (site_is_narrow) {
+            // Make the menu go away after interacting with it.
+            hideSmallMenu();
         }
     });
 
@@ -83,9 +90,9 @@ $(function() {
             }
 
             // Check if the user has gone up or not. (MOBILE SPECIFIC)
-            if (y_scroll_pos >= last_position && site_is_narrow) {
+            if (y_scroll_pos > last_position && site_is_narrow) {
                 hideSmallMenu();
-            } else if (y_scroll_pos < last_position && site_is_narrow) {
+            } else if (y_scroll_pos <= last_position && site_is_narrow) {
                 showSmallMenu();
             } else {
                 showSmallMenu();
