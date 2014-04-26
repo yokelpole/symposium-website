@@ -47,20 +47,19 @@ $(function() {
     $('.half_hexagon, .hexagon').click(function(clicked_hexagon) {
         var class_name = clicked_hexagon.currentTarget.classList[1];
         var site_is_narrow = $('.small_hex_container').css('right') === '0px' ? true : false;
-        var offset = site_is_narrow ? 0 : $('.small_hex_container').height();
 
         switch (class_name) {
             case 'groups_hexagon':
-                $('html, body').animate({scrollTop: $('.groups').offset().top - offset}, 800);
+                $('html, body').animate({scrollTop: $('.groups').offset().top}, 800);
                 break;
             case 'sponsors_hexagon':
-                $('html, body').animate({scrollTop: $('.sponsors').offset().top - offset}, 800);
+                $('html, body').animate({scrollTop: $('.sponsors').offset().top}, 800);
                 break;
             case 'symposium_hexagon':
-                $('html, body').animate({scrollTop: $('.symposium').offset().top - offset}, 800);
+                $('html, body').animate({scrollTop: $('.symposium').offset().top}, 800);
                 break;
             case 'register_hexagon':
-                $('html, body').animate({scrollTop: $('.registration').offset().top - offset}, 800);
+                $('html, body').animate({scrollTop: $('.registration').offset().top}, 800);
                 break;
         }
 
