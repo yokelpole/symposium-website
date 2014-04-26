@@ -1,5 +1,4 @@
 $(function() {
-    var which_hex = '';
     /* Makes hex shapes the correct dimensions regardless of size */
     function hex() {
         var width = $('.welcome_hex_container').css('width');
@@ -29,7 +28,6 @@ $(function() {
             '; border-right-color: white; border-right-style: solid; border-bottom:' + borderTopBot +
             '; border-bottom-color: #b5c531; border-bottom-style: solid; } </style> ');
 
-
         $('#symposium_hexagon .half_hexagon_text').css('margin-left', (height * .05));
         $('#groups_hexagon .half_hexagon_text').css('margin-left', (height * .15));
         $('#sponsors_hexagon .half_hexagon_text').css('margin-left', (height * .075));
@@ -45,68 +43,61 @@ $(function() {
 
     hex();
 
-    $('.sponsors_hexagon').click(function() {
-        which_hex = 'sponsors';
-        big_hex_slide_out();
-        var p = $('.sponsors').position();
-        $('html, body').animate({scrollTop: $('.sponsors').offset().top}, 800);
-        showSmallMenu(which_hex);
-    });// end sponsors click
+    // Handler for menu item clicks.
+    $('.half_hexagon, .hexagon').click(function(clicked_hexagon) {
+        var class_name = clicked_hexagon.currentTarget.classList[1];
 
-    $('.groups_hexagon').click(function() {
-        which_hex = 'groups';
-        big_hex_slide_out();
-        var p = $('.groups').position();
-        $('html, body').animate({scrollTop: $('.groups').offset().top}, 800);
-        showSmallMenu(which_hex);
-    });// end groups click
+        switch (class_name) {
+            case 'groups_hexagon':
+                $('html, body').animate({scrollTop: $('.groups').offset().top}, 800).delay(1000);
+                break;
+            case 'sponsors_hexagon':
+                $('html, body').animate({scrollTop: $('.sponsors').offset().top}, 800).delay(1000);
+                break;
+            case 'symposium_hexagon':
+                $('html, body').animate({scrollTop: $('.symposium').offset().top}, 800).delay(1000);
+                break;
+            case 'register_hexagon':
+                $('html, body').animate({scrollTop: $('.register').offset().top}, 800).delay(1000);
+                break;
+        }
+    });
 
-    $('.symposium_hexagon').click(function() {
-        which_hex = 'symposium';
-        big_hex_slide_out();
-        var p = $('.symposium').position();
-        $('html, body').animate({scrollTop: $('.symposium').offset().top}, 800);
-        showSmallMenu(which_hex);
-    });// end symposium click
+    // Create an event to see where the user has currently scrolled past.
+    // Used for displaying / hiding the menu.
+    $(window).on('scroll', function() {
+        var y_scroll_pos = window.pageYOffset;
+        var position = $('.welcome_selection_menu').position().top;
 
-    $('.register_hexagon').click(function() {
-        which_hex = 'register';
-        big_hex_slide_out();
-        var p = $('.registration').position();
-        $('html, body').animate({scrollTop: $('.registration').offset().top}, 800);
-        showSmallMenu(which_hex);
-    });// end register click
+        if (y_scroll_pos > position) {
+            if ($('#sponsors_hexagon_big').css('margin-left') === '0px') {
+                big_hex_slide_out();
+            }
+            showSmallMenu();
+        } else {
+            if ($('#sponsors_hexagon_big').css('margin-left') === '-1200px') {
+                big_hex_slide_in();
+            }
+            hideSmallMenu();
+        }
+    });
 
     function big_hex_slide_out() {
-        if ($('#sponsors_hexagon_big').css('margin-left') === '0px') {
-            $('#sponsors_hexagon_big').animate({ 'margin-left' : '-1200px'
-                    }, 500);
-            $('#symposium_hexagon_big').animate({ 'margin-left' : '1200px'
-                    }, 500).delay(100);
-            $('#groups_hexagon_big').animate({ 'margin-left' : '-1200px'
-                    }, 500);
-            $('#register_hexagon_big').animate({ 'margin-left' : '1200px'
-                    }, 500);
-        }
+        $('#sponsors_hexagon_big').animate({ 'margin-left' : '-1200px' }, 500);
+        $('#symposium_hexagon_big').animate({ 'margin-left' : '1200px' }, 500);
+        $('#groups_hexagon_big').animate({ 'margin-left' : '-1200px' }, 500);
+        $('#register_hexagon_big').animate({ 'margin-left' : '1200px' }, 500);
     }
 
     function big_hex_slide_in() {
-        if ($('#sponsors_hexagon_big').css('margin-left') === '') {
-            $('#sponsors_hexagon_big').animate({ 'margin-left' : '0px'
-                    }, 500);
-            $('#symposium_hexagon_big').animate({ 'margin-left' : '0px'
-                    }, 500).delay(100);
-            $('#groups_hexagon_big').animate({ 'margin-left' : '0px'
-                    }, 500);
-            $('#register_hexagon_big').animate({ 'margin-left' : '0px'
-                    }, 500);
-        }
-
+        $('#sponsors_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
+        $('#symposium_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
+        $('#groups_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
+        $('#register_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
     }
 
-    function showSmallMenu(which_hex) {
+    function showSmallMenu() {
         var floating_menu = $('#floating_menu');
-
         if (floating_menu.css('top') == '-100px') {
             floating_menu.animate({
                 'top' : '0px'
@@ -114,35 +105,12 @@ $(function() {
         }
     }
 
-    function hideSmallMenu(which_hex) {
+    function hideSmallMenu() {
         var floating_menu = $('#floating_menu');
-
         if (floating_menu.css('top') == '0px') {
             floating_menu.animate({
                 'top' : '-100px'
             });
         }
     }
-
-    $('.half_hexagon').click(function() {
-        var p = $('.welcome_graphic').position();
-        $('html, body').animate({scrollTop: $('.welcome_graphic').offset().top}, 800).delay(1000);
-        big_hex_slide_in();
-    }); //end homepage click
-
-    // Create an event to see where the user has currently scrolled past.
-    // Used for displaying / hiding the menu.
-    $(window).on('scroll', function() {
-        var y_scroll_pos = window.pageYOffset;
-
-        var position = $('.welcome_selection_menu').position().top;
-
-        if (y_scroll_pos > position) {
-            big_hex_slide_out();
-            showSmallMenu();
-        } else {
-            big_hex_slide_in();
-            hideSmallMenu();
-        }
-    });
 });// end ready
