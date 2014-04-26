@@ -1,8 +1,7 @@
-/* All attempts have been made to place CSS in order of where it first appears in page */
-
 body {
 	font-family: 'Source Sans Pro', sans-serif;
     overflow-x: hidden !important;
+    min-width: 480px;
 }
 
 p {
@@ -44,7 +43,7 @@ td:first-child {
 	Floating menubar specific CSS.
 ***************************************************/
 #floating_menu {
-	top: -100px;
+	top: -300px;
 }
 
 .small_hex_container{
@@ -59,6 +58,16 @@ td:first-child {
 /* Media query to make menubar  work w/ responsive design */
 @media (max-width: 767px) {
 	.small_hex_container {
+		width: 100%;
+		right: 0px;
+	}
+
+	.half_hexagon {
+		float: none !important;
+		width: 100% !important;
+	}
+
+	.half_hexagon:after {
 		display: none;
 	}
 }
@@ -66,8 +75,6 @@ td:first-child {
 /**************************************************
 	Welcome/Header area specific CSS.
 ***************************************************/
-
-
 div.section {
 	text-align: center;
 }
@@ -250,7 +257,6 @@ span.intro {
 /**************************************************
 	Misc CSS.
 ***************************************************/
-
 .table {
 	margin-bottom: 0px;
 }
@@ -276,7 +282,6 @@ span.intro {
 /**************************************************
 	Hexagon CSS.
 ***************************************************/
-
 .welcome_hex_container{
 	width:200px;
 	height:200px;

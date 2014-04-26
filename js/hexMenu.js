@@ -49,31 +49,47 @@ $(function() {
 
         switch (class_name) {
             case 'groups_hexagon':
-                $('html, body').animate({scrollTop: $('.groups').offset().top}, 800);
+                $('html, body').animate({scrollTop: $('.groups').offset().top - $('.small_hex_container').height()}, 800);
                 break;
             case 'sponsors_hexagon':
-                $('html, body').animate({scrollTop: $('.sponsors').offset().top}, 800);
+                $('html, body').animate({scrollTop: $('.sponsors').offset().top - $('.small_hex_container').height()}, 800);
                 break;
             case 'symposium_hexagon':
-                $('html, body').animate({scrollTop: $('.symposium').offset().top}, 800);
+                $('html, body').animate({scrollTop: $('.symposium').offset().top - $('.small_hex_container').height()}, 800);
                 break;
             case 'register_hexagon':
-                $('html, body').animate({scrollTop: $('.registration').offset().top}, 800);
+                $('html, body').animate({scrollTop: $('.registration').offset().top - $('.small_hex_container').height()}, 800);
                 break;
         }
     });
 
-    // Create an event to see where the user has currently scrolled past.
-    // Used for displaying / hiding the menu.
+    // Track user movement on page, used for the following:
+    //   * Displaying / hiding the mobile menu.
+    //   * Displaying / hiding the full site menu.
+    //   * Displaying which area of the site the user is in.
+    var last_position = $('.welcome_selection_menu').position().top;
+
     $(window).on('scroll', function() {
         var y_scroll_pos = window.pageYOffset;
-        var position = $('.welcome_selection_menu').position().top;
+        var welcome_end_position = $('.welcome_selection_menu').position().top;
+        var site_is_narrow = $('.small_hex_container').css('right') === '0px' ? true : false;
 
-        if (y_scroll_pos > position) {
+        if (y_scroll_pos > welcome_end_position) {
+            // User has scrolled beyond the welcome area.
+
+            // Hide the welcome page hexagons.
             if ($('#sponsors_hexagon_big').css('margin-left') === '0px') {
                 big_hex_slide_out();
             }
-            showSmallMenu();
+
+            // Check if the user has gone up or not. (MOBILE SPECIFIC)
+            if (y_scroll_pos >= last_position && site_is_narrow) {
+                hideSmallMenu();
+            } else if (y_scroll_pos < last_position && site_is_narrow) {
+                showSmallMenu();
+            } else {
+                showSmallMenu();
+            }
         } else {
             if ($('#sponsors_hexagon_big').css('margin-left') === '-1200px') {
                 big_hex_slide_in();
@@ -81,7 +97,9 @@ $(function() {
             hideSmallMenu();
         }
 
-        // Check to see which menu item should have styling applied.
+        last_position = y_scroll_pos;
+
+        // Check to see which floating menu item should have styling applied.
         $('.half_hexagon .half_hexagon_text').css('text-decoration', 'none');
 
         if (y_scroll_pos >= $('.registration').position().top) {
@@ -89,17 +107,17 @@ $(function() {
             return;
         }
 
-        if (y_scroll_pos > $('.symposium').position().top) {
+        if (y_scroll_pos >= $('.symposium').position().top) {
             $('.symposium_hexagon .half_hexagon_text').css('text-decoration', 'underline');
             return;
         }
 
-        if (y_scroll_pos > $('.sponsors').position().top) {
+        if (y_scroll_pos >= $('.sponsors').position().top) {
             $('.sponsors_hexagon .half_hexagon_text').css('text-decoration', 'underline');
             return;
         }
 
-        if (y_scroll_pos > $('.groups').position().top) {
+        if (y_scroll_pos >= $('.groups').position().top) {
             $('.groups_hexagon .half_hexagon_text').css('text-decoration', 'underline');
             return;
         }
@@ -121,19 +139,15 @@ $(function() {
 
     function showSmallMenu() {
         var floating_menu = $('#floating_menu');
-        if (floating_menu.css('top') == '-100px') {
-            floating_menu.animate({
-                'top' : '0px'
-            });
+        if (floating_menu.css('top') == '-300px') {
+            floating_menu.animate({ 'top' : '0px' });
         }
     }
 
     function hideSmallMenu() {
         var floating_menu = $('#floating_menu');
         if (floating_menu.css('top') == '0px') {
-            floating_menu.animate({
-                'top' : '-100px'
-            });
+            floating_menu.animate({ 'top' : '-300px' });
         }
     }
 });// end ready
