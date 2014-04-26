@@ -49,16 +49,16 @@ $(function() {
 
         switch (class_name) {
             case 'groups_hexagon':
-                $('html, body').animate({scrollTop: $('.groups').offset().top}, 800).delay(1000);
+                $('html, body').animate({scrollTop: $('.groups').offset().top}, 800);
                 break;
             case 'sponsors_hexagon':
-                $('html, body').animate({scrollTop: $('.sponsors').offset().top}, 800).delay(1000);
+                $('html, body').animate({scrollTop: $('.sponsors').offset().top}, 800);
                 break;
             case 'symposium_hexagon':
-                $('html, body').animate({scrollTop: $('.symposium').offset().top}, 800).delay(1000);
+                $('html, body').animate({scrollTop: $('.symposium').offset().top}, 800);
                 break;
             case 'register_hexagon':
-                $('html, body').animate({scrollTop: $('.register').offset().top}, 800).delay(1000);
+                $('html, body').animate({scrollTop: $('.registration').offset().top}, 800);
                 break;
         }
     });
@@ -79,6 +79,29 @@ $(function() {
                 big_hex_slide_in();
             }
             hideSmallMenu();
+        }
+
+        // Check to see which menu item should have styling applied.
+        $('.half_hexagon .half_hexagon_text').css('text-decoration', 'none');
+
+        if (y_scroll_pos >= $('.registration').position().top) {
+            $('.register_hexagon .half_hexagon_text').css('text-decoration', 'underline');
+            return;
+        }
+
+        if (y_scroll_pos > $('.symposium').position().top) {
+            $('.symposium_hexagon .half_hexagon_text').css('text-decoration', 'underline');
+            return;
+        }
+
+        if (y_scroll_pos > $('.sponsors').position().top) {
+            $('.sponsors_hexagon .half_hexagon_text').css('text-decoration', 'underline');
+            return;
+        }
+
+        if (y_scroll_pos > $('.groups').position().top) {
+            $('.groups_hexagon .half_hexagon_text').css('text-decoration', 'underline');
+            return;
         }
     });
 
