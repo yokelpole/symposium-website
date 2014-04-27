@@ -84,9 +84,7 @@ $(function() {
             // User has scrolled beyond the welcome area.
 
             // Hide the welcome page hexagons.
-            if ($('#sponsors_hexagon_big').css('margin-left') === '0px') {
-                big_hex_slide_out();
-            }
+            big_hex_slide_out();
 
             // Check if the user has gone up or not. (MOBILE SPECIFIC)
             if (y_scroll_pos > last_position && site_is_narrow) {
@@ -97,9 +95,7 @@ $(function() {
                 showSmallMenu();
             }
         } else {
-            if ($('#sponsors_hexagon_big').css('margin-left') === '-1200px') {
-                big_hex_slide_in();
-            }
+            big_hex_slide_in();
             hideSmallMenu();
         }
 
@@ -130,30 +126,34 @@ $(function() {
     });
 
     function big_hex_slide_out() {
-        $('#sponsors_hexagon_big').animate({ 'margin-left' : '-1200px' }, 500);
-        $('#symposium_hexagon_big').animate({ 'margin-left' : '1200px' }, 500);
-        $('#groups_hexagon_big').animate({ 'margin-left' : '-1200px' }, 500);
-        $('#register_hexagon_big').animate({ 'margin-left' : '1200px' }, 500);
+        if ($('#sponsors_hexagon_big').css('margin-left') === '0px') {
+            $('#sponsors_hexagon_big').animate({ 'margin-left' : '-1200px' }, 500);
+            $('#symposium_hexagon_big').animate({ 'margin-left' : '1200px' }, 500);
+            $('#groups_hexagon_big').animate({ 'margin-left' : '-1200px' }, 500);
+            $('#register_hexagon_big').animate({ 'margin-left' : '1200px' }, 500);
+        }
     }
 
     function big_hex_slide_in() {
-        $('#sponsors_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
-        $('#symposium_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
-        $('#groups_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
-        $('#register_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
+        if ($('#sponsors_hexagon_big').css('margin-left') === '-1200px') {
+            $('#sponsors_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
+            $('#symposium_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
+            $('#groups_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
+            $('#register_hexagon_big').animate({ 'margin-left' : '0px' }, 500);
+        }
     }
 
     function showSmallMenu() {
         var floating_menu = $('#floating_menu');
         if (floating_menu.css('top') == '-300px') {
-            floating_menu.animate({ 'top' : '0px' });
+            floating_menu.stop().animate({ 'top' : '0px' });
         }
     }
 
     function hideSmallMenu() {
         var floating_menu = $('#floating_menu');
         if (floating_menu.css('top') == '0px') {
-            floating_menu.animate({ 'top' : '-300px' });
+            floating_menu.stop().animate({ 'top' : '-300px' });
         }
     }
 });// end ready
