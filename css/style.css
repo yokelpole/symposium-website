@@ -219,6 +219,11 @@ span.intro {
 	font-weight: 700;
 	width: 125px; 
 	display: inline-block;
+	vertical-align: top;
+}
+
+span.location {
+	display: inline-block;
 }
 
 @media (max-width: 1200px) {
