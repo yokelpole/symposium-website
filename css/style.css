@@ -31,6 +31,10 @@ h2 {
 	margin-bottom: 0px;
 }
 
+.table {
+	table-layout: fixed;
+}
+
 h1.section_header {
 	text-align: left;
 }
