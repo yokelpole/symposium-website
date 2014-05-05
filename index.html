@@ -1,71 +1,338 @@
 <!DOCTYPE HTML>
 <!--
-	2014 Capstone Symposium Website
-	Created by:
-		Kyle Poole
-		Cory Purnell
-		Dylan Moore
+    2014 Capstone Symposium Website
+    Created by:
+        Kyle Poole
+        Cory Purnell
+        Dylan Moore
 -->
 <html>
-	<head>
-	    <meta charset="utf-8" />
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1" />
-	    <title>Camosun College - Technology Symposium 2014</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Camosun College - Technology Symposium 2014</title>
 
-	    <!-- css incldues -->
-	    <link href="./css/bootstrap.min.css" rel="stylesheet" />
-	    <link href="./css/font-awesome.min.css" rel="stylesheet" />
-	    <link href="./css/jquery.fullPage.css" rel="stylesheet"/>
-	    <link href="./css/style.css" rel="stylesheet" />
-		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <!-- css incldues -->
+        <link href="./css/bootstrap.min.css" rel="stylesheet" />
+        <link href="./css/font-awesome.min.css" rel="stylesheet" />
+        <link href="./css/jquery.fullPage.css" rel="stylesheet"/>
+        <link href="./css/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 
-		<!-- Source Sans Pro font -->
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300, 400,700,900' rel='stylesheet' type='text/css'>
+        <!-- Source Sans Pro font -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300, 400,700,900' rel='stylesheet' type='text/css'>
 
+<<<<<<< HEAD
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.js"></script>
 		<script type="text/javascript" src="./js/jquery.fullPage.js"></script>
 		<script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+=======
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.js"></script>
+        <script type="text/javascript" src="./js/jquery.fullPage.js"></script>
+>>>>>>> gh-pages
 
-		<script>
-			$(document).ready(function() {
-				// Activate the full page capabilities.
-				$('#fullpage').fullpage({
-					anchors: ['introduction', 'groups'],
-					'slidesColor': ['white', '#939FAA'],
-					'autoScrolling': false
-				});
-			});
-		</script>
-	</head>
-	<body>
-		<div class="section" id="welcome" style="text-align: center">
-			<img src="./images/Header - Graphic.png"  />
-			<img src="./images/Header - Date and Place.png" />
-			<h1 style="font-family: 'Source Sans Pro', sans-serif; color: #bc446a; font-weight: 300; ">An open showcase of graduating students' projects.</h1>
-			<div class="selection-menu">
-				<span style="position: relative">
-					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 50px; top: -10px">GROUPS</span>
-					<img id="welcome-groups" src="./images/Menu Hexagon - Green.png" style="height: 200px;" />
-				</span>
-				<span style="position: relative">
-					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 35px; top: -10px">SPONSORS</span>
-					<img id="welcome-sponsors" src="./images/Menu Hexagon - Yellow.png" style="height: 200px" />
-				</span>
-				<span style="position: relative">
-					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 30px; top: -10px">SYMPOSIUM</span>
-					<img id="welcome-symposium" src="./images/Menu Hexagon - Purple.png" style="height: 200px" />
-				</span>
-				<span style="position: relative">
-					<span style="font-family: 'Source Sans Pro', sans-serif; color: white; position: absolute; font-weight: 700; font-size: 20pt; left: 40px; top: -10px">REGISTER</span>
-					<img id="welcome-register" src="./images/Menu Hexagon - Red.png" style="height: 200px" />
-				</span>
-			</div>
-			<i class="fa fa-arrow-down" style="font-size:72pt; margin-top: 20px;"></i>
-		</div>
-		<h1>Goodbye cruel world!</h1>
-	</body>
+        <!-- For interactive menus -->
+        <script type="text/javascript" src="./js/hexMenu.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                // Activate the full page capabilities.
+                $('#fullpage_top').fullpage({
+                    anchors: ['welcome'],
+                    'slidesColor' : ['white'],
+                    'autoScrolling' : false
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+    <!-- floating menu -->
+    <div id="hex_menu">
+        <div class="small_hex_container" id="floating_menu">
+            <div class="half_hexagon groups_hexagon" id="groups_hexagon_small">
+                <div class="half_hex_center_box">
+                    <div class="half_hexagon_text"> GROUPS </div>
+                </div>
+            </div>
+            <div class="half_hexagon sponsors_hexagon" id="sponsors_hexagon_small">
+                <div class="half_hex_center_box">   
+                    <div class="half_hexagon_text"> SPONSORS </div>
+                </div>
+            </div>
+            <div class="half_hexagon symposium_hexagon" id="symposium_hexagon_small">
+                <div class="half_hex_center_box">
+                    <div class="half_hexagon_text"> SYMPOSIUM </div>
+                </div>
+            </div>
+            <div class="half_hexagon register_hexagon" id="register_hexagon_small">
+                <div class="half_hex_center_box">
+                    <div class="half_hexagon_text"> REGISTER </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fullpage_top">
+        <div class="section" id="welcome">
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="welcome_graphic" src="./images/Header - Complete.jpg"  />
+                </div>
+            </div>
+            <div class="row">
+                <h1 class="welcome_text">An open showcase of graduating students' projects.</h1>
+            </div>
+            <div class="welcome_selection_menu row">
+                <div class="col-md-6 welcome_group_and_sponsors">
+                    <div class="welcome_hex_container" id="left_hex_container">
+                        <div class="hexagon groups_hexagon" id="groups_hexagon_big">
+                            <div class="hex_center_box">
+                                <div class ="hexagon_text">GROUPS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome_hex_container" id="left_hex_container">
+                        <div class="hexagon sponsors_hexagon" id="sponsors_hexagon_big">
+                            <div class="hex_center_box">
+                                <div class ="hexagon_text">SPONSORS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 welcome_symposium_and_register">
+                    <div class="welcome_hex_container" id="right_hex_container">
+                        <div class="hexagon symposium_hexagon" id="symposium_hexagon_big">
+                            <div class="hex_center_box">
+                                <div class ="hexagon_text">SYMPOSIUM</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome_hex_container" id="right_hex_container">
+                        <div class="hexagon register_hexagon" id="register_hexagon_big">
+                            <div class="hex_center_box">
+                                <div class ="hexagon_text">REGISTER</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <i class="fa fa-arrow-down welcome_down_arrow"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll groups">
+        <div class="container">
+            <!--  Header text -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section_header">Symposium Groups</h1>
+                </div>
+            </div>
+
+            <!-- Individual group Entry - Text left aligned. -->
+            <div class="row center_row group_row">
+                <div class="col-xs-8 center">
+                    <div class="group_description">
+                        <h3>Team Brangus - <a href="http://video.adultswim.com/check-it-out-with-dr-steve-brule/">Check it Out! with Dr. Steve Brule</a></h3>
+                        <p>Go to bed early you doofus, ‘cause when you’re sleeping there’s no lonely times, just dreams.</p>
+                        <p>I know it's prom time's coming up, and if you're a senior in high school you're thinking "What the heck am I gonna do for a date?" Take your sister, dum-dum, she's a girl.</p>
+                    </div>
+                </div>
+                <div class="col-xs-4 center">
+                    <img src="./images/Team - Team Brangus.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+                <div class="col-xs-4 center">
+                    <img src="./images/Team - Team Brangus.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-8 center">
+                    <div class="group_description">
+                        <h3>Team Brangus - <a href="http://video.adultswim.com/check-it-out-with-dr-steve-brule/">Check it Out! with Dr. Steve Brule</a></h3>
+                        <p>Go to bed early you doofus, ‘cause when you’re sleeping there’s no lonely times, just dreams.</p>
+                        <p>I know it's prom time's coming up, and if you're a senior in high school you're thinking "What the heck am I gonna do for a date?" Take your sister, dum-dum, she's a girl.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+        </div>
+    </div>
+
+    <div class="scroll sponsors" id="sponsor_scroll">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section_header">Sponsors</h1>
+                </div>
+            </div>
+
+            <!-- Individual group Entry - Text left aligned. -->
+            <div class="row center_row group_row">
+                <div class="col-xs-8 center">
+                    <div class="group_description">
+                        <h3><a href="http://gaben.tv/">Gaben</a></h3>
+                        <p>Gabe Newell, often nicknamed Gaben, is the co-founder and managing director of video game developer Valve Corporation. As a prominent figure in the video gaming industry, Newell has developed a sizable reputation on the Internet for his controversial views on console gaming, his large physique, and relation to Valve series such as Counter-Strike, Half-Life, Left 4 Dead, Portal and Team Fortress. Due to the constant delay of Half-Life 2: Episode Three and some of the features on Team Fortress 2, he has also gained a reputation as a troll.</p>
+                    </div>
+                </div>
+                <div class="col-xs-4 center">
+                    <img src="./images/Sponsor - Gaben.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+                <div class="col-xs-4 center">
+                    <img src="./images/Sponsor - Gaben.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-8 center">
+                    <div class="group_description">
+                        <h3><a href="http://gaben.tv/">Gaben</a></h3>
+                        <p>Gabe Newell, often nicknamed Gaben, is the co-founder and managing director of video game developer Valve Corporation. As a prominent figure in the video gaming industry, Newell has developed a sizable reputation on the Internet for his controversial views on console gaming, his large physique, and relation to Valve series such as Counter-Strike, Half-Life, Left 4 Dead, Portal and Team Fortress. Due to the constant delay of Half-Life 2: Episode Three and some of the features on Team Fortress 2, he has also gained a reputation as a troll.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+        </div>
+    </div>
+    <div class="scroll symposium">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section_header">Symposium Details</h1>
+                </div>
+            </div>
+            <div class="row group_row">
+                <div class="col-md-6">
+                    <p>
+                        <span class="intro">DATE: </span>
+                        <span class="information">June 19, 2014</span>
+                    </p>
+                    <p>
+                        <span class="intro">TIME: </span>
+                        <span class="information">9:00AM to 5:00PM</span>
+                    </p>
+                    <p>
+                    <p>
+                        <span class="intro">LOCATION: </span>
+                            <span class="information">
+                                Pacific Forestry Centre<br/>
+                                506 Burnside Road West<br/>
+                                Victoria, BC
+                            </span>
+                    </p>
+                    <p>Parking is free. There will be signs indicating which parking lot to use. Please proceed to the main entrance of the building to check into the event.</p>
+                    <p>Catering provided by <a href="http://www.hotpockets.com/">Hot Pockets</a>.</p>
+                </div>
+                <div class="col-md-6" style="border-radius: 15px; ">
+                    <div style="border-radius: 15px; background: white; text-align: center; height: 475px;">
+                        <!-- Map -->
+                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21167.92621518904!2d-123.394292!3d48.4567065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548f7307cc7133f1%3A0xd96fcbf84ec80d3b!2sPacific+Forestry+Centre!5e0!3m2!1sen!2s!4v1397617860340" width="525" height="450" frameborder="0" style="border-radius:15px; margin-top: 15px;"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row group_row">
+                <div class="col-md-12">
+                    <h2>Schedule</h2>
+                </div>
+            </div>
+            <div class="row group_row">
+                <div class="col-md-6">
+                    <div class="group_description">
+                        <table class="table table-striped">
+                            <h3>Morning</h3>
+                            <tr>
+                                <th>Time</th>
+                                <th>Event</th>
+                            </tr>
+                            <tr>
+                                <td>9:00AM</td>
+                                <td>The first thing</td>
+                            </tr>
+                            <tr>
+                                <td>9:15AM</td>
+                                <td>The next thing</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="group_description">
+                        <h3>Afternoon</h3>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Time</th>
+                                <th>Event</th>
+                            </tr>
+                            <tr>
+                                <td>1:00PM</td>
+                                <td>The first afternoon thing</td>
+                            </tr>
+                            <tr>
+                                <td>2:00PM</td>
+                                <td>The next afternoon thing</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="registration section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Registration</h1>
+                    <p>Are you interested in attending? Please let us know!</p>
+                </div>
+            </div>
+            <div class="row group_row">
+                <div class="group_description col-md-offset-2 col-md-8">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" placeholder="Name" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="organization" class="col-sm-2 control-label">Organization</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="company" placeholder="Organization" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" placeholder="Email Address" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Phone #</label>
+                            <div class="col-sm-10">
+                                <input type="phone" class="form-control" id="phone" placeholder="Phone #" />
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-lg btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
 </html>

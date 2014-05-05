@@ -332,6 +332,7 @@
 		var isScrolling = false;
 		
 		//when scrolling...
+        /*
 		$(window).scroll(function(e){
 
 			if(!options.autoScrolling){					
@@ -381,7 +382,7 @@
 				
 			}					
 		});	
-	
+	   */
 
 		
 	
