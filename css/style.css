@@ -204,8 +204,14 @@ i.welcome_down_arrow {
 	text-align: left;
 }
 
+/* For the small pics */
+.xs-group-image {
+    padding: 0px 15px 5px;
+    width: 100% !important;
+}
+
 /**************************************************
-	Groups specific CSS.
+	Sponsor specific CSS.
 ***************************************************/
 .sponsors {
 	background: #cdbd42;
