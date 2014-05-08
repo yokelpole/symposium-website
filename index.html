@@ -40,11 +40,27 @@
                     'slidesColor' : ['white'],
                     'autoScrolling' : false
                 });
+
+                // Event handler for when registration is submitted.
+                $('#registration_form').submit(function(event) {
+                    event.preventDefault();
+
+                    var posting = $.post('./register2014.php', $(this).serialize());
+
+                    posting.done(function(data) {
+                        $('#registration_area').html('<h3 style="text-align: center">' + data + '</h3>');
+                    });
+                });
             });
         </script>
     </head>
 
     <body>
+
+    <noscript>
+        This site won't work properly without JavaScript! Please enable it!
+    </noscript>
+
     <!-- floating menu -->
     <div id="hex_menu">
         <div class="small_hex_container" id="floating_menu">
@@ -468,8 +484,13 @@
                 <div class="col-sm-4"><img src="./images/Sponsor - North Park.jpg"/></div>
             </div>
             <div class="row">
-                <div class="col-sm-6"><img src="./images/Sponsor - NFIS.jpg" /></div>
-                <div class="col-sm-6"><img src="./images/Sponsor - Latin Party.jpg"/></div>
+                <div class="col-sm-offset-2 col-sm-4"><img src="./images/Sponsor - NFIS.jpg" /></div>
+                <div class="col-sm-4"><img src="./images/Sponsor - Latin Party.jpg"/></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4"><img src="./images/Sponsor - Camosun College.jpg" /></div>
+                <div class="col-sm-4"><img src="./images/Sponsor - Dactyl Studios.jpg" /></div>
+                <div class="col-sm-4"></div>
             </div>
         </div>
     </div>
@@ -566,9 +587,10 @@
                     <!--<p>Are you interested in attending? Please let us know!</p>-->
                 </div>
             </div>
+            <!--
             <div class="row group_row">
-                <div class="group_description col-md-offset-2 col-md-8">
-                    <form class="form-horizontal" method="post" action="./register2014.php">
+                <div id="registration_area" class="group_description col-md-offset-2 col-md-8">
+                    <form id="registration_form" class="form-horizontal" method="post" action="./register2014.php">
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">First Name:</label>
                             <div class="col-sm-10">
@@ -603,6 +625,7 @@
                     </form>
                 </div>
             </div>
+            -->
         </div>
     </div>
     </body>
