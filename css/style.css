@@ -92,6 +92,20 @@ td:first-child {
 	right: 5px;
 }
 
+#mobile_menu_button {
+	position: fixed;
+	z-index: 5;
+	background: white;
+	right: 5px;
+	padding: 10px;
+	border: black;
+	border-radius: 5px;
+	top: 5px;
+	box-shadow: 0px 5px 10px;
+	display: none;
+}
+
+
 /* Media query to make menubar  work w/ responsive design */
 @media (max-width: 767px) {
 	.small_hex_container {
@@ -102,10 +116,15 @@ td:first-child {
 	.half_hexagon {
 		float: none !important;
 		width: 100% !important;
+		display: none;
 	}
 
 	.half_hexagon:after {
 		display: none;
+	}
+
+	#mobile_menu_button {
+		display: block;
 	}
 }
 
@@ -361,6 +380,7 @@ span.information {
 	height:50px;
 	position: relative;
 }
+
 .half_hexagon:after {
    height: 0;
    width: 0px;
