@@ -1,3 +1,7 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
 <!DOCTYPE HTML>
 <!--
     2014 Capstone Symposium Website
@@ -71,10 +75,6 @@
         </div>
     </div>
 
-    <div id="mobile_menu_button">
-        <img src="./images/list.png"/>
-    </div>
-
     <div id="fullpage_top">
         <div class="section" id="welcome">
             <div class="row">
@@ -139,17 +139,17 @@
             <div class="row center_row group_row">
 
                 <div class="visible-xs xs-col-12">
-                    <img src="./images/Team Stonecroft.jpg" class="img-rounded xs-group-image" />
+                    <img src="./images/sm/stonecroft_sm.jpg" class="img-rounded xs-group-image" />
                 </div>
 
                 <div class="col-xs-12 col-sm-8 col-md-8 center">
                     <div class="group_description">
-                        <h3 style="font-style:bold">Team Yellow Penguin</h3>
+                        <h3 style="font-style:bold">Team Yellow Pengiun</h3>
                         <h4><span>Project:</span>Website and Database Management System</h4>
                         <h4><span>Sponsored by:</span><a href="" target="_">Stonecroft Landscapes Company</a></h4>
                         <p>Team Yellow Penguin has been working with Stonecroft Landscapes to implement a website and a database management system.</p>
                         <p>The website improves the company’s ability to stay strong and competitive on Vancouver Island. In addition, the website provides an alternative way to serve SCL’s customers. The database management system improves employees’ efficiency, helps eliminate paperwork, and automates the current business system</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
                 <div class="hidden-xs col-sm-4 col-md-4 center">
@@ -162,7 +162,7 @@
             <div class="row center_row group_row">
 
                 <div class="visible-xs xs-col-12">
-                    <img src="./images/Team Sendwithus.jpg" class="img-rounded xs-group-image" />
+                    <img src="./images/sm/sendwithus_sm.jpg" class="img-rounded xs-group-image" />
                 </div>
 
                 <div class="hidden-xs col-sm-4 col-md-4 center">
@@ -175,7 +175,7 @@
                         <h4><span>Sponsored by:</span><a href="http://www.sendwithus.com" target="_">Sendwithus</a></h4>
                         <p>The sendwithus WordPress plugin allows WordPress site administrators to easily enable transactional email capabilities within their existing WordPress installations.</p>
                         <p>With the power of the sendwithus WordPress plugin, site administrators can easily send transactional emails that make use of A/B testing, drip campaigns, easy to create templates, and a set of powerful analytical tools.</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
             </div>
@@ -185,16 +185,17 @@
             <div class="row center_row group_row">
 
                 <div class="visible-xs xs-col-12">
-                    <img src="./images/Team North Park.jpg" class="img-rounded xs-group-image" />
+                    <img src="./images/sm/northpark_sm.jpg" class="img-rounded xs-group-image" />
                 </div>
 
                 <div class="col-xs-12 col-sm-8 col-md-8 center">
                     <div class="group_description">
                         <h3>2 Legit 2 Quit</h3>
-                        <h4><span>Project:</span>NPNA e-Newsletter and Website Refresh Project</h4>
+                        <h4><span>Project:</span>NPNA e-Newsletter and Website Refresh 
+Project</h4>
                         <h4><span>Sponsored by:</span><a href="http://npna.ca/" target="_">North Park Neighbourhood Association</a></h4>
                         <p>The NPNA e-Newsletter and Website Refresh Project’s primary goal was to create a new, modern website for the NPNA. This website includes an integrated e-Newsletter, an event calendar, an executives’ forum, and a document archive, and the overall security of the website was considered paramount during its development. </p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
                 <div class="hidden-xs col-sm-4 col-md-4 center">
@@ -207,7 +208,7 @@
             <div class="row center_row group_row">
 
                 <div class="visible-xs xs-col-12">
-                    <img src="./images/Team TIU.jpg" class="img-rounded xs-group-image" />
+                    <img src="./images/sm/tiu_sm.jpg" class="img-rounded xs-group-image" />
                 </div>
 
                 <div class="hidden-xs col-sm-4 col-md-4 center">
@@ -219,7 +220,7 @@
                         <h4><span>Project:</span>Turn It Up Mobile Application</h4>
                         <h4><span>Sponsored by:</span><a href="http://need2.ca/" target="_">NEED2</a></h4>
                         <p>Turn It Up (TIU) is an ongoing campaign put on by NEED2, Victoria’s suicide prevention centre. The campaign is designed to begin the de-stigmatization of conversations about suicide within our culture. The TIU application is poised to bring this campaign into the mobile sphere by allowing youth to collaboratively make some noise about suicide prevention!</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
             </div>
@@ -229,7 +230,7 @@
             <div class="row center_row group_row">
 
                 <div class="visible-xs xs-col-12">
-                    <img src="./images/Team Zumbini.jpg" class="img-rounded xs-group-image" />
+                    <img src="./images/sm/zumbini_sm.jpg" class="img-rounded xs-group-image" />
                 </div>
 
                 <div class="col-xs-12 col-sm-8 col-md-8 center">
@@ -238,7 +239,7 @@
                         <h4><span>Project:</span>Zumbini Website</h4>
                         <h4><span>Sponsored by:</span><a href="http://www.westshorezumba.com/" target="_">WZ Latin Party Fitness</a></h4>
                         <p>Summary coming soon!</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
                 <div class="hidden-xs col-sm-4 col-md-4 center">
@@ -249,21 +250,17 @@
 
             <!-- Individual group Entry - Text right aligned. -->
             <div class="row center_row group_row">
-
-                <div class="visible-xs xs-col-12">
-                    <img src="./images/Team Nemo.jpg" class="img-rounded xs-group-image" />
-                </div>
-
-                <div class="hidden-xs col-sm-4 col-md-4 center">
+                <div class="col-xs-4 center">
                     <img src="./images/Team Nemo.jpg" style="max-width: 100%" />
+
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 center">
                     <div class="group_description">
                         <h3>Team Nemo</h3>
                         <h4><span>Project:</span>Project Nemo</h4>
-                        <h4><span>Sponsored by:</span><a href="http://dactylstudios.com/" target="_">Dactyl Studios</a></h4>
+                        <h4><span>Sponsored by:</span><a href="http://dactylstudios.com/" target="_">Sponsor</a></h4>
                         <p>Summary coming soon!</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
             </div>
@@ -273,16 +270,16 @@
             <div class="row center_row group_row">
 
                 <div class="visible-xs xs-col-12">
-                    <img src="./images/Team NFIS.jpg" class="img-rounded xs-group-image" />
+                    <img src="./images/sm/nfis_sm.jpg" class="img-rounded xs-group-image" />
                 </div>
 
                 <div class="col-xs-12 col-sm-8 col-md-8 center">
                     <div class="group_description">
                         <h3>Team NFIS</h3>
                         <h4><span>Project:</span>NFIS</h4>
-                        <h4><span>Sponsored by:</span><a href="https://ca.nfis.org/index_eng.html" target="_">Canada's National Forest Information System</a></h4>
+                        <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>
                         <p>Summary coming soon!</p>
-                           <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
                 <div class="hidden-xs col-sm-4 col-md-4 center">
@@ -291,24 +288,18 @@
             </div>
             <!-- End Individual Group Entry -->
 
-
             <!-- Individual group Entry - Text right aligned. -->
             <div class="row center_row group_row">
-
-                <div class="visible-xs xs-col-12">
-                    <img src="./images/Team LTEMA.jpg" class="img-rounded xs-group-image" />
-                </div>
-
-                <div class="hidden-xs col-sm-4 col-md-4 center">
+                <div class="col-xs-4 center">
                     <img src="./images/Team LTEMA.jpg" style="max-width: 100%" />
                 </div>
-                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                <div class="col-xs-8 center">
                     <div class="group_description">
                         <h3 style="font-style:bold">Team LTEMA</h3>
                         <h4><span>Project:</span>Project Here</h4>
                         <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>
                         <p>Summary coming soon!</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
             </div>
@@ -316,21 +307,16 @@
 
             <!-- Individual group Entry - Text left aligned. -->
             <div class="row center_row group_row">
-
-                <div class="visible-xs xs-col-12">
-                    <img src="./images/Team Educask.jpg" class="img-rounded xs-group-image" />
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                <div class="col-xs-8 center">
                     <div class="group_description">
                         <h3 style="font-style:bold">Team Educask</h3>
                         <h4><span>Project:</span>Educask</h4>
                         <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>
-                        <p>The Educask project is an open-source project geared to create a better social network for education. Educask  intends to bring the classroom to the internet to life by encouraging dialog between students. It will be a crossbreed of a social network and a Learning Management System (LMS).</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <p>Summary coming soon!</p>
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
-                <div class="hidden-xs col-sm-4 col-md-4 center">
+                <div class="col-xs-4 center">
                     <img src="./images/Team Educask.jpg" style="max-width: 100%" />
                 </div>
             </div>
@@ -338,21 +324,16 @@
 
             <!-- Individual group Entry - Text right aligned. -->
             <div class="row center_row group_row">
-
-                <div class="visible-xs xs-col-12">
-                    <img src="./images/Team Awesome Possum.jpg" class="img-rounded xs-group-image" />
-                </div>
-
-                <div class="hidden-xs col-sm-4 col-md-4 center">
+                <div class="col-xs-4 center">
                     <img src="./images/Team Awesome Possum.jpg" style="max-width: 100%" />
                 </div>
-                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                <div class="col-xs-8 center">
                     <div class="group_description">
                         <h3 style="font-style:bold">Team Awesome Possum</h3>
                         <h4><span>Project:</span>Project Here</h4>
                         <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>
                         <p>Summary coming soon!</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
                 </div>
             </div>
@@ -368,86 +349,68 @@
 
             <!-- Individual group Entry - Text right aligned. -->
             <div class="row center_row group_row">
-                <div class="visible-xs xs-col-12">
-                    <img src="./images/Team AGS Electronics.jpg" class="img-rounded xs-group-image" />
+                <div class="col-xs-4 center">
+                    <img src="./images/Team AGS Electronics.jpg" style="max-width: 100%" />
                 </div>
-                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                <div class="col-xs-8 center">
                     <div class="group_description">
                         <h3 style="font-style:bold">Team AGS Electronics</h3>
                         <h4><span>Project:</span>Project Here</h4>
                         <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>
                         <p>Summary coming soon!</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
-                </div>
-                <div class="hidden-xs col-sm-4 col-md-4 center">
-                    <img src="./images/Team AGS Electronics.jpg" style="max-width: 100%" />
                 </div>
             </div>
             <!-- End Individual Group Entry -->
 
             <!-- Individual group Entry - Text left aligned. -->
             <div class="row center_row group_row">
-
-                <div class="visible-xs xs-col-12">
-                    <img src="./images/Team R-Motion.jpg" class="img-rounded xs-group-image" />
-                </div>
-
-                <div class="hidden-xs col-sm-4 col-md-4 center">
-                    <img src="./images/Team R-Motion.jpg" style="max-width: 100%" />
-                </div>
-                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                <div class="col-xs-8 center">
                     <div class="group_description">
                         <h3>Team R-Motion</h3>
                         <h4><span>Project:</span>AE35 Unit</h4>
                         <h4><span>Sponsored by:</span><a href="" target="_">Electrical and Mechanical Technology Departments of Camosun College</a></h4>
                         <p>The AE35 Unit demonstrates the advancement made in robotics in the last few years, and the availability of the everyday person to build and develop their own robots. R-Motion is working in conjunction with the Electrical and Mechanical Technology Departments of Camosun College to showcase the power the college has from turning student innovation into realities.</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
+                </div>
+                <div class="col-xs-4 center">
+                    <img src="./images/Team R-Motion.jpg" style="max-width: 100%" />
                 </div>
             </div>
             <!-- End Individual Group Entry -->
 
             <!-- Individual group Entry - Text right aligned. -->
             <div class="row center_row group_row">
-
-                <div class="visible-xs xs-col-12">
-                    <img src="./images/Team IOTA Energy.jpg" class="img-rounded xs-group-image" />
+                <div class="col-xs-4 center">
+                    <img src="./images/Team IOTA Energy.jpg" style="max-width: 100%" />
                 </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                <div class="col-xs-8 center">
                     <div class="group_description">
                         <h3>Team IOTA Energy</h3>
                         <h4><span>Project:</span>Project Here</h4>
                         <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>
                         <p>Summary coming soon!</p>
-                           <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
-                </div>
-                <div class="hidden-xs col-sm-4 col-md-4 center">
-                    <img src="./images/Team IOTA Energy.jpg" style="max-width: 100%" />
                 </div>
             </div>
             <!-- End Individual Group Entry -->
 
             <!-- Individual group Entry - Text right aligned. -->
             <div class="row center_row group_row">
-
-                <div class="visible-xs xs-col-12">
-                    <img src="./images/Team Down B Technologies.jpg" class="img-rounded xs-group-image" />
-                </div>
-
-                <div class="hidden-xs col-sm-4 col-md-4 center">
-                    <img src="./images/Team Down B Technologies.jpg" style="max-width: 100%" />
-                </div>
-                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                <div class="col-xs-8 center">
                     <div class="group_description">
                         <h3>Team Down B Technologies</h3>
                         <h4><span>Project:</span>Project Here</h4>
                         <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>
                         <p>Summary coming soon!</p>
-                        <!--<h3><a href="">View Bio</a></h3>-->
+                        <h3><a href="">View Bio</a></h3>
                     </div>
+                </div>
+                <div class="col-xs-4 center">
+                    <img src="./images/Team Down B Technologies.jpg" style="max-width: 100%" />
                 </div>
             </div>
             <!-- End Individual Group Entry -->
@@ -455,21 +418,12 @@
         </div>
     </div>
 
-    <div class="scroll sponsors" id="sponsor_scroll">
+    <div class="scroll sponsors section" id="sponsor_scroll">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="section_header_DISABLE">Project Sponsors</h1>
+                    <h1 class="section_header_DISABLE">Sponsor information coming soon!</h1>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4"><img src="./images/Sponsor - Sendwithus.jpg" /></div>
-                <div class="col-sm-4"><img src="./images/Sponsor - Need 2.jpg"/></div>
-                <div class="col-sm-4"><img src="./images/Sponsor - North Park.jpg"/></div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6"><img src="./images/Sponsor - NFIS.jpg" /></div>
-                <div class="col-sm-6"><img src="./images/Sponsor - Latin Party.jpg"/></div>
             </div>
         </div>
     </div>
@@ -558,37 +512,267 @@
             -->
         </div>
     </div>
-    <div class="registration section">
+
+    <div class="registration section" id="registration">
         <div class="container">
+
+			
+			
+		<?php
+			// database login credentials are stored outside web-facing space.
+			// We may have to change this absolute path when the site goes live,
+		 
+			// Connect to the MySQL server.
+		   require ( "credentials.php" );
+		 $mailSent = false;
+
+		  // Is registration closed?
+		  $dateNow    = strtotime("now");
+		  $dateClosed = strtotime("18 June 2014 09:00:00");
+		  $tooLate    = ($dateNow > $dateClosed);
+
+			//Initializing 
+			$firstName ="";
+			$lastName  ="";
+			$company   ="";
+			$email     ="";
+			$phone 	   ="";
+			$result	   ="";
+
+		if(isset($_POST['firstname']) && isset($_POST['lastname'])) {
+
+			$firstName = strip_tags($_POST['firstname']);
+			$lastName  = strip_tags($_POST['lastname']);
+			$company   = strip_tags($_POST['company']);
+			$email     = strip_tags($_POST['email']);
+			$phone     = strip_tags($_POST['phone']);
+		 
+			$errors    = null;
+
+			if ($tooLate) { // dealbreaker.  we won't even look at other validations if this one fails.
+			  $errors = "Sorry, registration is now closed.  The symposium was held on June 18th, 2014.  See you in 2015!<br/>\r\n";
+			} else {  
+
+			  // validate required fields
+
+			  if(empty($firstName)) { 
+				$errors .= "Please make sure your <strong>First Name</strong> is filled out.<br/>\r\n";
+			  }	
+
+			  if(empty($lastName)) {
+				$errors .= "Please make sure your <strong>Last Name</strong> is filled out.<br/>\r\n";
+			  }
+
+			  if(empty($email) || !valid_email($email)) {
+				$errors .= "Please fill out a valid <strong>E-Mail Address</strong>.<br/>\r\n";
+			  }
+		 
+			}
+
+			if($errors == null) {
+
+		   
+			$LinkID = mysql_connect($req_server, $req_username, $req_password);
+
+			// Die if no connect
+			if (!$LinkID) {
+				die('Could not connect: ' . mysql_error());
+			}
+			// Choose the DB and run a query.
+			mysql_select_db('capjune2014');
+			
+			
+				$query = "select * from reg_tbl where email='$email'";
+				//echo $email;
+				$result = mysql_query($query);
+				if (mysql_num_rows($result))
+				{
+					$errors .= "This <strong>E-Mail Address</strong> has been registered already. Please contact <a href=\"mailto:cap2014@cs.camosun.bc.ca\">cap2014@cs.camosun.bc.ca</a> if an error has occured. <br/>\r\n";
+					//exit();
+				}else{
+		
+				
+					// Assemble the SQL query
+					$query = "INSERT INTO reg_tbl (first_name, last_name, org_comp_name, email, phone) VALUES ('$firstName', '$lastName','$company','$email', '$phone')";
+					// Excute sql query
+					$result = mysql_query($query);
+					if($result){
+						//echo "Register success";
+						//$msg = "User Created Successfully.";
+					}elseif (!$result) { // If the query returned error, display error the msg
+						echo "Could not successfully run query ($query) from DB ";
+						//exit;
+					}
+				}	
+
+				
+		  }
+			if($errors == null) {	
+
+			// Set up Registration Committee notification email
+
+			// Set up registrant name
+			   $name = ""; 
+			//if ($title!="") {
+			 //    $name .= $title. " ";
+			//}
+			   $name .= $firstName. " ". $lastName;
+
+			   // Set up message body
+			   $data  = "--b1_fce20d8377a30a7c38bd2a920598ae8f
+		Content-Type: text/plain; charset = \"UTF-8\"
+		Content-Transfer-Encoding: quoted-printable\r\n\r\n";
+			   $data .= "New Capstone 2014 Registration:\r\n\r\n";
+			   $data .= $name."\r\n";
+			   //$data .= "Role: $role\r\n";
+			$data .= "Company: $company\r\n";
+			$data .= "E-Mail: $email \r\n";
+
+			// Set subject
+			$subject = "New Capstone 2014 Registration (" .substr($firstName,0,1). " " .$lastName. ")\r\n";
+	
+	// Set headers		
+	$headers = 'From: capstone2014@cs.camosun.bc.ca' . "\r\n" .
+    	           'Reply-To: capstone2014@cs.camosun.bc.ca' . "\r\n" .
+    		    'X-Mailer: PHP/' . phpversion()."\r\n".
+                  'MIME-Version: 1.0'."\r\n".
+                  'Content-Type: multipart/alternative;'."\r\n".
+                  '    boundary="b1_fce20d8377a30a7c38bd2a920598ae8f"';
+				
+       // Send notification email(s) to Registration Committee
+
+	//mail("capstone2014@cs.camosun.bc.ca", $subject, $data, $headers);
+      // mail("gerald@codegods.ca", $subject, $data, $headers); 
+       $mailSent = true;
+
+       // Set up registrant notification email   
+
+       // Set subject
+       $subject = "Camosun College Technologies Capstone 2014 Registration - Confirmation\r\n";
+    
+       // Set up message body
+       $data  = "--b1_fce20d8377a30a7c38bd2a920598ae8f
+Content-Type: text/plain; charset = \"UTF-8\"
+Content-Transfer-Encoding: quoted-printable
+
+
+Hello $name!  Thank you for registering for the Camosun College Technologies Capstone Symposium 2014.
+
+The registration details we recorded are:
+
+Name: $name
+Company: $company
+email: $email
+
+The Symposium will be held at Pacific Forestry Centre, 506 Burnside Road West, Victoria BC. from 9am to 6pm on Wednesday, June 19, 2014.
+
+You will be notified by email if any important schedule changes occur.
+
+If you have any questions, please contact us at capstone2014@cs.camosun.bc.ca.
+
+---------------------------------------------------------------------------------
+The Camosun College Technologies Capstone Symposium will be attended by movers and shakers in the tech sector.  This is an opportunity to reach them!  Sponsorship opportunities range from a simple business card ad to a tradeshow booth!  Contact us at cap2014@cs.camosun.bc.ca to learn more...\r\n\r\n
+\r\n
+
+--b1_fce20d8377a30a7c38bd2a920598ae8f
+Content-Type: text/html; charset = \"UTF-8\"
+Content-Transfer-Encoding: quoted-printable
+<body style=\"font-family:Segoe UI,Myriad;\">
+<p>Hello $name!  Thank you for registering for the Camosun College Technologies Capstone Symposium 2014.</p>
+<p>The registration details we recorded are:</p>
+<div style=\"margin-left:48px;\">
+Name: $name<br>
+Company: $company<br>
+email: $email<br>
+</div>
+<p>The Symposium will be held at 
+<div style=\"margin-left:48px;\">Pacific Forestry Centre<br>506 Burnside Road West<br>Victoria BC</div>
+<br>from 9am to 6pm on Wednesday, June 19, 2014.</p>
+<p>You will be notified by email if any important schedule changes occur.\r\n</p>
+<p>If you have any questions, please contact us at <a href=\"mailto:capstone2014@cs.camosun.bc.ca\">capstone2014@cs.camosun.bc.ca</a>.</p>
+<hr>
+<p>The Camosun College Technologies Capstone Symposium will be attended by movers and shakers and up-and-comers 
+in the tech sector.  This is an opportunity to reach them!  Sponsorship opportunities range from a simple business 
+card ad to a tradeshow booth!  Contact us at <a href=\"mailto:cap2014@cs.camosun.bc.ca\">cap2014@cs.camosun.bc.ca</a> to learn more...</p>
+</body>
+--b1_fce20d8377a30a7c38bd2a920598ae8f--
+
+
+";
+
+       // Send registrant notification email      
+       mail($email, $subject, $data, $headers);
+
+			} 
+
+		}
+
+
+		//Validate Email
+		function valid_email($email)
+		{
+			//check formatting of address
+			if(!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email))
+				{return false;}
+			//Check mail server is up
+			else
+			{
+
+				//get mail server address
+				list($username, $domain) = split("@",$email);
+				if(@getmxrr($domain, $mxhost))
+					{$connectaddress = $mxhost[0];}
+				else
+					{$connectaddress = $domain;}
+
+				//check for a connection to mail server
+				$connect = @fsockopen($connectaddress, 25);
+
+				if($connect)
+					{return true;}
+			}
+
+			return false;
+		}
+		  if(!$mailSent) {    
+			if ($tooLate) {
+			  echo("<p>Registration is now closed. Thank you for your support of the 2014 Capstone Symposium.</p>");
+			}
+
+			if(!empty($errors)) {
+			  echo "<p>".$errors."</p>";
+			}
+
+		?> 			
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Registration coming soon!</h1>
-                    <!--<p>Are you interested in attending? Please let us know!</p>-->
+                   <!-- <h1>Registration coming soon!</h1>-->
+                    <p>Are you interested in attending? Please let us know!</p>
                 </div>
-            </div>
-            <div class="row group_row">
+            </div>			
+             <div class="row group_row">
                 <div class="group_description col-md-offset-2 col-md-8">
-                    <form class="form-horizontal" method="post" action="./register2014.php">
+                    <form class="form-horizontal" method='post' action="<?php echo $_SERVER['PHP_SELF'] ?>#registration">
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">First Name:</label>
+                            <label for="name" class="col-sm-2 control-label">First Name*:</label>
                             <div class="col-sm-10">
                                 <input type="text"  required="required" class="form-control"  name='firstname'  id='firstname' placeholder="First Name" />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Last Name:</label>
+						<div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Last Name*:</label>
                             <div class="col-sm-10">
                                 <input type="text" required="required"  class="form-control"  name='lastname' id="lastname" placeholder="Last Name" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="organization" class="col-sm-2 control-label">Organization:</label>
+                            <label for="organization" class="col-sm-2 control-label">Organization*:</label>
                             <div class="col-sm-10">
                                 <input type="text" required="required" class="form-control"  name='company' id="company" placeholder="Organization" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-sm-2 control-label">Email:</label>
+                            <label for="email" class="col-sm-2 control-label">Email*:</label>
                             <div class="col-sm-10">
                                 <input type="email"  required="required" class="form-control" name='email'  id="email" placeholder="Email Address" />
                             </div>
@@ -599,10 +783,25 @@
                                 <input type="phone" class="form-control" name='phone' id="phone" placeholder="Phone #" />
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-primary">Register</button>
+                        <button id="reg_button" type='submit' class="btn btn-lg btn-primary">Register</button>
                     </form>
+
                 </div>
+				<?php
+				  } else { //Registration sent.
+				?>
+				<div class="row">
+					<div class="col-md-12">
+						<p>Sent email to : <?php echo $email?></p>
+                    	<p>Registration Successful, we look forward to seeing you on June 19th, 2014.</p>
+					</div>
+				</div>
+					
+				<?php
+				  }
+				?> 
             </div>
+
         </div>
     </div>
     </body>
