@@ -185,6 +185,10 @@ i.welcome_down_arrow {
 	text-align: left;
 }
 
+.table{
+	table-layout:fixed;
+}
+
 /**************************************************
 	Groups specific CSS.
 ***************************************************/
