@@ -65,7 +65,17 @@ $(function() {
 
         if (site_is_narrow) {
             // Make the menu go away after interacting with it.
-            hideSmallMenu();
+            $('.half_hexagon').css('display', 'none');
+        }
+    });
+
+    // Listener for clicks on the menu for mobile.
+    $('#mobile_menu_button').click(function() {
+        var half_hexagon = $('.half_hexagon');
+        if (half_hexagon.css('display') === 'none') {
+            half_hexagon.css('display', 'block');
+        } else {
+            half_hexagon.css('display', 'none');
         }
     });
 
@@ -80,20 +90,12 @@ $(function() {
         var welcome_end_position = $('.welcome_selection_menu').position().top;
         var site_is_narrow = $('.small_hex_container').css('right') === '0px' ? true : false;
 
+
         if (y_scroll_pos > welcome_end_position) {
             // User has scrolled beyond the welcome area.
-
             // Hide the welcome page hexagons.
             big_hex_slide_out();
-
-            // Check if the user has gone up or not. (MOBILE SPECIFIC)
-            if (y_scroll_pos > last_position && site_is_narrow) {
-                hideSmallMenu();
-            } else if (y_scroll_pos <= last_position && site_is_narrow) {
-                showSmallMenu();
-            } else {
-                showSmallMenu();
-            }
+            showSmallMenu();
         } else {
             big_hex_slide_in();
             hideSmallMenu();
@@ -145,15 +147,28 @@ $(function() {
 
     function showSmallMenu() {
         var floating_menu = $('#floating_menu');
+        var mobile_menu_button = $('#mobile_menu_button');
+        var half_hexagons = $('.half_hexagon');
+
+        if (mobile_menu_button.css('display') === 'none' && half_hexagons.css('display') !== 'block') {
+            half_hexagons.css('display', 'block');
+        }
+
         if (floating_menu.css('top') == '-300px') {
             floating_menu.stop().animate({ 'top' : '0px' });
+            mobile_menu_button.stop().animate({ 'top' : '5px' });
         }
     }
 
     function hideSmallMenu() {
         var floating_menu = $('#floating_menu');
+        var mobile_menu_button = $('#mobile_menu_button');
+
         if (floating_menu.css('top') == '0px') {
             floating_menu.stop().animate({ 'top' : '-300px' });
+            mobile_menu_button.stop().animate({ 'top' : '-300px' });
         }
+
+
     }
 });// end ready

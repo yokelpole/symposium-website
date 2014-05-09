@@ -1,6 +1,7 @@
 body {
 	font-family: 'Source Sans Pro', sans-serif;
     overflow-x: hidden !important;
+    min-width: 430px;
 }
 
 p {
@@ -29,6 +30,25 @@ h2 {
 	text-shadow: 1px 2px 2px black;
 	margin-top: 0px;
 	margin-bottom: 0px;
+}
+
+h3 {
+	font-weight: 600;
+}
+
+h3 > a {
+	text-align: center;
+	display: block;
+}
+
+h4 > span {
+	display: inline-block;
+	width: 120px;
+	font-weight: 600;
+}
+
+.table {
+	table-layout: fixed;
 }
 
 h1.section_header {
@@ -72,6 +92,20 @@ td:first-child {
 	right: 5px;
 }
 
+#mobile_menu_button {
+	position: fixed;
+	z-index: 5;
+	background: white;
+	right: 5px;
+	padding: 10px;
+	border: black;
+	border-radius: 5px;
+	top: 5px;
+	box-shadow: 0px 5px 10px;
+	display: none;
+}
+
+
 /* Media query to make menubar  work w/ responsive design */
 @media (max-width: 767px) {
 	.small_hex_container {
@@ -82,10 +116,15 @@ td:first-child {
 	.half_hexagon {
 		float: none !important;
 		width: 100% !important;
+		display: none;
 	}
 
 	.half_hexagon:after {
 		display: none;
+	}
+
+	#mobile_menu_button {
+		display: block;
 	}
 }
 
@@ -185,15 +224,23 @@ i.welcome_down_arrow {
 	text-align: left;
 }
 
-.table{
-	table-layout:fixed;
+/* For the small pics */
+.xs-group-image {
+	padding: 0px 15px 5px;
+	/* width: 100% !important; */
+	clip: rect(0px, 0px, 10px, 10);
+	margin-bottom: -120px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 /**************************************************
-	Groups specific CSS.
+	Sponsor specific CSS.
 ***************************************************/
 .sponsors {
 	background: #cdbd42;
+	text-align: center;
 }
 
 
@@ -301,8 +348,15 @@ span.information {
 .center {
 	display: table-cell;
     vertical-align:middle;
-    float:none;
     text-align: center;
+    float: none;
+}
+
+
+@media (max-width: 992px) {
+	.center {
+		float: left;
+	}
 }
 
 /**************************************************
@@ -326,6 +380,7 @@ span.information {
 	height:50px;
 	position: relative;
 }
+
 .half_hexagon:after {
    height: 0;
    width: 0px;
@@ -359,7 +414,19 @@ span.information {
 	text-transform: uppercase;
 	text-shadow: 0px 1px rgba(255,255,255,.4);
 }
+.sponsors_resize{
+	max-width: 33.3%;
+	float:left;
+}
 
+.sponsors_resize img{
+	max-width:100%;
+	height:auto;
+}
+
+.sponsors_resize_first{
+	margin-left:16.6667%;
+}
 /* Container for full hexagon */
 .hexagon {
    width: 90%; 
