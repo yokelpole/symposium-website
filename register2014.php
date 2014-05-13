@@ -17,8 +17,8 @@
   $lastName  ="";
   $company   ="";
   $email     ="";
-  $phone 	   ="";
-  $result	   ="";
+  $phone     ="";
+  $result    ="";
 
   if(isset($_POST['firstname']) && isset($_POST['lastname'])) {
     $firstName = strip_tags($_POST['firstname']);
@@ -35,7 +35,7 @@
       // validate required fields
       if(empty($firstName)) { 
         $errors .= "Please make sure your <strong>First Name</strong> is filled out.<br/>\r\n";
-      }	
+      } 
 
       if(empty($lastName)) {
         $errors .= "Please make sure your <strong>Last Name</strong> is filled out.<br/>\r\n";
@@ -47,36 +47,36 @@
     }
 
     if($errors == null) {
-    	$LinkID = mysql_connect($req_server, $req_username, $req_password);
+      $LinkID = mysql_connect($req_server, $req_username, $req_password);
 
-    	// Die if no connect
-    	if (!$LinkID) {
-    		die('Could not connect: ' . mysql_error());
-    	}
+      // Die if no connect
+      if (!$LinkID) {
+        die('Could not connect: ' . mysql_error());
+      }
 
-    	// Choose the DB and run a query.
-    	mysql_select_db('capjune2014');
-  	
-  		$query = "select * from reg_tbl where email='$email'";
+      // Choose the DB and run a query.
+      mysql_select_db('capjune2014');
+    
+      $query = "select * from reg_tbl where email='$email'";
 
       $result = mysql_query($query);
 
-  		if (mysql_num_rows($result)) {
-  			$errors .= "This <strong>E-Mail Address</strong> has been registered already. Please contact <a href=\"mailto:capstone2014@cs.camosun.bc.ca\">capstone2014@cs.camosun.bc.ca</a> if an error has occured. <br/>\r\n";
-		  } else {
-  			// Assemble the SQL query
-  			$query = "INSERT INTO reg_tbl (first_name, last_name, org_comp_name, email, phone) VALUES ('$firstName', '$lastName','$company','$email', '$phone')";
-  			// Excute sql query
-  			$result = mysql_query($query);
-  			if ($result) {
-  				//echo "Register success";
-  				//$msg = "User Created Successfully.";
-  			} elseif (!$result) { 
+      if (mysql_num_rows($result)) {
+        $errors .= "This <strong>E-Mail Address</strong> has been registered already. Please contact <a href=\"mailto:capstone2014@cs.camosun.bc.ca\">capstone2014@cs.camosun.bc.ca</a> if an error has occured. <br/>\r\n";
+      } else {
+        // Assemble the SQL query
+        $query = "INSERT INTO reg_tbl (first_name, last_name, org_comp_name, email, phone) VALUES ('$firstName', '$lastName','$company','$email', '$phone')";
+        // Excute sql query
+        $result = mysql_query($query);
+        if ($result) {
+          //echo "Register success";
+          //$msg = "User Created Successfully.";
+        } elseif (!$result) { 
           // If the query returned error, display error the msg
-  				$errors .= "Could not successfully run query ($query) from DB ";
-  				//exit;
-  			}
-		  }	
+          $errors .= "Could not successfully run query ($query) from DB ";
+          //exit;
+        }
+      } 
     }
   }
 
@@ -86,22 +86,22 @@
     return;
   }
 
-  if($errors == null) {	
+  if($errors == null) { 
     // Set up Registration Committee notification email
-  	// Set up registrant name
+    // Set up registrant name
     $name = ""; 
     $name .= $firstName. " ". $lastName;
 
     // Set up message body
-  	// Set subject
-  	$subject = "New Capstone 2014 Registration (" .substr($firstName,0,1). " " .$lastName. ")\r\n";
+    // Set subject
+    $subject = "New Capstone 2014 Registration (" .substr($firstName,0,1). " " .$lastName. ")\r\n";
 
-    // Set headers		
+    // Set headers    
     $headers =  'From: capstone2014@cs.camosun.bc.ca' . "\r\n" .
-    	          'Reply-To: capstone2014@cs.camosun.bc.ca' . "\r\n" .
-        		    'X-Mailer: PHP/' . phpversion()."\r\n".
+                'Reply-To: capstone2014@cs.camosun.bc.ca' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion()."\r\n".
                 'MIME-Version: 1.0'."\r\n";
-  		
+      
      // Send notification email(s) to Registration Committee
      $mailSent = true;
 
@@ -128,42 +128,46 @@
 
     // Send registrant notification email      
     mail($email, $subject, $data, $headers);
-	} 
+  } 
 
 //Validate Email
 function valid_email($email)
 {
-	//check formatting of address
-	if(!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email))
-		{return false;}
-	//Check mail server is up
-	else
-	{
-		//get mail server address
-		list($username, $domain) = split("@",$email);
-		if(@getmxrr($domain, $mxhost))
-			{$connectaddress = $mxhost[0];}
-		else
-			{$connectaddress = $domain;}
+  //check formatting of address
+  if(!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email))
+    {return false;}
+  //Check mail server is up
+  else
+  {
+    //get mail server address
+    list($username, $domain) = split("@",$email);
+    if(@getmxrr($domain, $mxhost))
+      {$connectaddress = $mxhost[0];}
+    else
+      {$connectaddress = $domain;}
 
-		//check for a connection to mail server
-		$connect = @fsockopen($connectaddress, 25);
+    //check for a connection to mail server
+    $connect = @fsockopen($connectaddress, 25);
 
-		if($connect)
-			{return true;}
-	}
+    if($connect)
+      {return true;}
+  }
 
-	return false;
+  return false;
+
 }
 
 if(!$mailSent) {    
   if ($tooLate) {
     echo("<p>Registration is now closed. Thank you for your support of the 2014 Capstone Symposium.</p>");
   }
-
+  //if($errors != null) 
   if(!empty($errors)) {
     echo "<p>".$errors."</p>";
   }
+  
+}else {
+  echo "Sent email to : ".$email."<br/>\r\n";
+  echo "Registration Successful, we look forward to seeing you<br/>\r\n on June 19th, 2014.<br/>\r\n";
 }
-
 ?> 

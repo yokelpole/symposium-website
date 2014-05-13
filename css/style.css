@@ -236,6 +236,13 @@ i.welcome_down_arrow {
 	display: block;
 }
 
+/* Media query to make sparse descriptions work responsively */
+@media (max-width: 992px) {
+	.group_row {
+		width: 105%;
+	}
+}
+
 /**************************************************
 	Sponsor specific CSS.
 ***************************************************/
