@@ -30,7 +30,7 @@
     $errors    = null;
 
     if ($tooLate) { // dealbreaker.  we won't even look at other validations if this one fails.
-      $errors = "Sorry, registration is now closed.  The symposium was held on June 18th, 2014.  See you in 2015!<br/>\r\n";
+      $errors = "Sorry, registration is now closed.  The symposium was held on June 17th, 2014.  See you in 2015!<br/>\r\n";
     } else {  
       // validate required fields
       if(empty($firstName)) { 
@@ -99,6 +99,7 @@
     // Set headers    
     $headers =  'From: capstone2014@cs.camosun.bc.ca' . "\r\n" .
                 'Reply-To: capstone2014@cs.camosun.bc.ca' . "\r\n" .
+                'Return-Path: <capstone2014@cs.camosun.bc.ca>' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion()."\r\n".
                 'MIME-Version: 1.0'."\r\n";
       
@@ -110,24 +111,17 @@
      $subject = "Camosun College Technologies Capstone 2014 Registration - Confirmation\r\n";
 
      // Set up message body
-     $data  = "
-              Hello $name!  Thank you for registering for the Camosun College Technologies Capstone Symposium 2014.
-
-              The registration details we recorded are:
-
-              Name: $name
-              Company: $company
-              email: $email
-
-              The Symposium will be held at Pacific Forestry Centre, 506 Burnside Road West, Victoria BC. from 9am to 6pm on Wednesday, June 19, 2014.
-
-              You will be notified by email if any important schedule changes occur.
-
-              If you have any questions, please contact us at capstone2014@cs.camosun.bc.ca.
-              ";
+    $data  = "Hello $name!  Thank you for registering for the Camosun College Technologies Capstone Symposium 2014.\r\n\r\n";
+    $data .= "The registration details we recorded are:\r\n\r\n";
+    $data .= "Name: $name\r\n";
+    $data .= "Company: $company\r\n";
+    $data .= "Email: $email\r\n\r\n";
+    $data .= "The Symposium will be held at The Inn at Laurel Point, 680 Montreal Street, Victoria, BC. on Wednesday, June 17, 2014.\r\n";
+    $data .= "You will be notified by email if any important schedule changes occur.\r\n";
+    $data .= "If you have any questions, please contact us at capstone2014@cs.camosun.bc.ca.\r\n";
 
     // Send registrant notification email      
-    mail($email, $subject, $data, $headers);
+    mail($email, $subject, $data, $headers, "capstone2014@cs.camosun.bc.ca");
   } 
 
 //Validate Email
@@ -168,6 +162,6 @@ if(!$mailSent) {
   
 }else {
   echo "Sent email to : ".$email."<br/>\r\n";
-  echo "Registration Successful, we look forward to seeing you<br/>\r\n on June 19th, 2014.<br/>\r\n";
+  echo "Registration Successful, we look forward to seeing you<br/>\r\n on June 17th, 2014.<br/>\r\n";
 }
 ?> 
