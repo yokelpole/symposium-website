@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <!--
     2014 Capstone Symposium Website
@@ -23,20 +24,11 @@
         <!-- Source Sans Pro font -->
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300, 400,700,900' rel='stylesheet' type='text/css'>
 
-<<<<<<< HEAD
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
-		<script type="text/javascript" src="./js/jquery.fullPage.js"></script>
-		<script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
-=======
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
         <script type="text/javascript" src="./js/bootstrap.js"></script>
         <script type="text/javascript" src="./js/jquery.fullPage.js"></script>
->>>>>>> gh-pages
 
         <!-- For interactive menus -->
         <script type="text/javascript" src="./js/hexMenu.js"></script>
@@ -49,11 +41,29 @@
                     'slidesColor' : ['white'],
                     'autoScrolling' : false
                 });
+
+                // Event handler for when registration is submitted.
+                $('#registration_form').submit(function(event) {
+                    event.preventDefault();
+
+                    $('#registration_area').html('<h3 style="text-align: center">Submitting...<br>Please wait a moment!</h3>');
+
+                    var posting = $.post('./register2014.php', $(this).serialize());
+
+                    posting.done(function(data) {
+                        $('#registration_area').html('<h3 style="text-align: center">' + data + '</h3>');
+                    });
+                });
             });
         </script>
     </head>
 
     <body>
+
+    <noscript>
+        This site won't work properly without JavaScript! Please enable it!
+    </noscript>
+
     <!-- floating menu -->
     <div id="hex_menu">
         <div class="small_hex_container" id="floating_menu">
@@ -78,6 +88,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="mobile_menu_button">
+        <img src="./images/list.png"/>
     </div>
 
     <div id="fullpage_top">
@@ -136,39 +150,351 @@
             <!--  Header text -->
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="section_header">Symposium Groups</h1>
+                    <h1 class="section_header">Computer Systems Technology</h1>
                 </div>
             </div>
 
             <!-- Individual group Entry - Text left aligned. -->
             <div class="row center_row group_row">
-                <div class="col-xs-8 center">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team Stonecroft.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
                     <div class="group_description">
-                        <h3>Team Brangus - <a href="http://video.adultswim.com/check-it-out-with-dr-steve-brule/">Check it Out! with Dr. Steve Brule</a></h3>
-                        <p>Go to bed early you doofus, ‘cause when you’re sleeping there’s no lonely times, just dreams.</p>
-                        <p>I know it's prom time's coming up, and if you're a senior in high school you're thinking "What the heck am I gonna do for a date?" Take your sister, dum-dum, she's a girl.</p>
+                        <h3 style="font-style:bold">Team Yellow Penguin</h3>
+                        <h4><span>Project:</span>Website and Database Management System</h4>
+                        <h4><span>Sponsored by:</span><a href="" target="_">Stonecroft Landscapes Company</a></h4>
+                        <p>Team Yellow Penguin has been working with Stonecroft Landscapes to implement a website and a database management system.</p>
+                        <p>The website improves the company’s ability to stay strong and competitive on Vancouver Island. In addition, the website provides an alternative way to serve SCL’s customers. The database management system improves employees’ efficiency, helps eliminate paperwork, and automates the current business system</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
                     </div>
                 </div>
-                <div class="col-xs-4 center">
-                    <img src="./images/Team - Team Brangus.jpg" style="max-width: 100%" />
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team Stonecroft.jpg" style="max-width: 100%" />
                 </div>
             </div>
             <!-- End Individual Group Entry -->
 
             <!-- Individual group Entry - Text right aligned. -->
             <div class="row center_row group_row">
-                <div class="col-xs-4 center">
-                    <img src="./images/Team - Team Brangus.jpg" style="max-width: 100%" />
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team Sendwithus.jpg" class="img-rounded xs-group-image" />
                 </div>
-                <div class="col-xs-8 center">
+
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team Sendwithus.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
                     <div class="group_description">
-                        <h3>Team Brangus - <a href="http://video.adultswim.com/check-it-out-with-dr-steve-brule/">Check it Out! with Dr. Steve Brule</a></h3>
-                        <p>Go to bed early you doofus, ‘cause when you’re sleeping there’s no lonely times, just dreams.</p>
-                        <p>I know it's prom time's coming up, and if you're a senior in high school you're thinking "What the heck am I gonna do for a date?" Take your sister, dum-dum, she's a girl.</p>
+                        <h3 style="font-style:bold">Introverted Wizards</h3>
+                        <h4><span>Project:</span>sendwithus WordPress Plugin</h4>
+                        <h4><span>Sponsored by:</span><a href="http://www.sendwithus.com" target="_">Sendwithus</a></h4>
+                        <p>The sendwithus WordPress plugin allows WordPress site administrators to easily enable transactional email capabilities within their existing WordPress installations.</p>
+                        <p>With the power of the sendwithus WordPress plugin, site administrators can easily send transactional emails that make use of A/B testing, drip campaigns, easy to create templates, and a set of powerful analytical tools.</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
                     </div>
                 </div>
             </div>
             <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text left aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team North Park.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3>2 Legit 2 Quit</h3>
+                        <h4><span>Project:</span>NPNA e-Newsletter and Website Refresh Project</h4>
+                        <h4><span>Sponsored by:</span><a href="http://npna.ca/" target="_">North Park Neighbourhood Association</a></h4>
+                        <p>The NPNA e-Newsletter and Website Refresh Project’s primary goal was to create a new, modern website for the NPNA. This website includes an integrated e-Newsletter, an event calendar, an executives’ forum, and a document archive, and the overall security of the website was considered paramount during its development. </p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team North Park.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team TIU.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team TIU.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3>Team TIU</h3>
+                        <h4><span>Project:</span>Turn It Up Mobile Application</h4>
+                        <h4><span>Sponsored by:</span><a href="http://need2.ca/" target="_">NEED2</a></h4>
+                        <p>Turn It Up (TIU) is an ongoing campaign put on by NEED2, Victoria’s suicide prevention centre. The campaign is designed to begin the de-stigmatization of conversations about suicide within our culture. The TIU application is poised to bring this campaign into the mobile sphere by allowing youth to collaboratively make some noise about suicide prevention!</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text left aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team Zumbini.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3>Team Escapé</h3>
+                        <h4><span>Project:</span><a href="http://www.victoriazumbini.com">VictoriaZumbini.com</a></h4>
+                        <h4><span>Sponsored by:</span><a href="http://www.westshorezumba.com/" target="_">Victoria Zumbini Program</a></h4>
+                        <p>The Victoria Zumbini Program is a leader in promoting fitness and 
+early childhood development in the Capital Region.</p><p>The Victoria Zumbini Website project was created to revolutionize the Zumbini program’s presence on the web. The new website, VictoriaZumbini.com, has been reconstructed from the ground up to streamline the online registration process across multiple devices.</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team Zumbini.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team Nemo.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team Nemo.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3>Team Nimo</h3>
+                        <h4><span>Project:</span>Project Nimo</h4>
+                        <h4><span>Sponsored by:</span><a href="http://dactylstudios.com/" target="_">Dactyl Studios</a></h4>
+                        <p>Team Nimo has had the pleasure of working alongside Dactyl to create a wireless audio solution. Dactyl Studios has recognized the lack of high-quality and affordable devices designed to easily provide multiple users with personal audio from their television through wireless technology. Thus, Dactyl Studios has envisioned a solution that would achieve headphone-based audio using a smartphone application that would act as a receiver for the televisions audio. </p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text left aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team NFIS.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3>Team NFIS</h3>
+                        <h4><span>Project:</span>NFIS</h4>
+                        <h4><span>Sponsored by:</span><a href="https://ca.nfis.org/index_eng.html" target="_">Canada's National Forest Information System</a></h4>
+                        <p>Summary coming soon!</p>
+                           <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team NFIS.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team LTEMA.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team LTEMA.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3 style="font-style:bold">LTEMA Project Team</h3>
+                        <h4><span>Project:</span>Long-Term Ecological Monitoring Application</h4>
+                        <h4><span>Sponsored by:</span><a href="http://www.env.gov.bc.ca/bcparks/" target="_">BC Parks</a> and <a href="http://www.sierrasystems.com/" target="_">Sierra Systems</a></h4>
+                        <p>The Ministry of Environment, BC Parks, in partnership with Sierra Systems, have sponsored a Capstone project to produce a cross-platform tablet application which assists in the collection and retention of ecological monitoring field data. Camosun College students Blair White, Nick Gulajec, and Rory Drysdale are working closely with Project Sponsor Dr. Tory Stevens of BC Parks using an iterative development approach to refine the final product. Sierra Systems is providing project management and technical expertise to assist the students in their efforts.</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text left aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team Educask.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3 style="font-style:bold">Team Educask</h3>
+                        <h4><span>Project:</span><a href="https://www.educask.com/" target="_">Educask</a></h4>
+                        <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>
+                        <p>The Educask project is an open-source project geared to create a better social network for education. Educask  intends to bring the classroom to the internet to life by encouraging dialog between students. It will be a crossbreed of a social network and a Learning Management System (LMS).</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team Educask.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team Awesome Possum.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team Awesome Possum.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3 style="font-style:bold">Team Awesome Possum</h3>
+                        <h4><span>Project:</span>Pathnotes</h4>
+                        <h4><span>Sponsored by:</span>Peter Burrage</h4>
+                        <p>PathNotes is a project about changing the current paradigm of classroom teaching. With PowerPoint dominating the classroom with static, and dull lesson presentations, PathNotes wishes to make classroom teaching more engaging. Enabling teachers to dynamically shape lessons as if they were still using a chalkboard, but with the technology available today.</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team OpenGovGear2.jpg" class="img-rounded xs-group-image" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3 style="font-style:bold">Team OpenGovGear</h3>
+                        <h4><span>Project:</span><a href="http://www.opengovgear.com/about-us/" target="_">OpenGovGear</a></h4>
+                        <h4><span>Sponsored by:</span>Brian Baird and Herb Lainchbury</h4>
+                        <p>The aim of the OpenGovGear project is to develop a series of data portals implementing CKAN, the Comprehensive Knowledge Archive Network. These portals will allow administrators to upload and organize data for the general public to freely browse and download. OpenGovGear will develop three separate CKAN extensions for rapid turnkey deployment to serve the rising needs of the Open Data movement.</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+                
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team OpenGovGear2.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- ELEX area -->
+            <!--  Header text -->
+            <div id="elex-projects" class="row">
+                <div class="col-md-12">
+                    <h1 class="section_header">Electronics & Computer Engineering Technology</h1>
+                </div>
+            </div>
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team AGS Electronics.jpg" class="img-rounded xs-group-image" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3 style="font-style:bold">Team AGS Electronics</h3>
+                        <!--<h4><span>Project:</span>Project Here</h4>
+                        <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>-->
+                        <p>Summary coming soon!</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team AGS Electronics.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text left aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team R-Motion.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team R-Motion.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3>Team R-Motion</h3>
+                        <h4><span>Project:</span>AE35 Unit</h4>
+                        <h4><span>Sponsored by:</span><a href="" target="_">Electrical and Mechanical Technology Departments of Camosun College</a></h4>
+                        <p>The AE35 Unit demonstrates the advancement made in robotics in the last few years, and the availability of the everyday person to build and develop their own robots. R-Motion is working in conjunction with the Electrical and Mechanical Technology Departments of Camosun College to showcase the power the college has from turning student innovation into realities.</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team IOTA Energy.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3>Team IOTA Energy</h3>
+                        <h4><span>Project:</span><a href="http://iotaenergy.wordpress.com/about/">Iota Energy Monitoring System</a></h4>
+                        <h4><span>Sponsored by:</span><a href="http://camosun.ca/learn/programs/electronics-computer-engineering-technology/" target="_">Camosun College</a></h4>
+                        <p>Household electricity waste is a common problem throughout British Columbia and across Canada. Increasing awareness is a fundamental, initial step in combating this problem. The Iota Energy Monitoring System will interface with existing BC Hydro smart meters and display real-time electricity use data using several methods.</p>
+                        <p>With the Iota system, you can effortlessly see how much electricity is being used in your household at every minute of the day, while easily controlling power outlets from remote locations! </p>
+                           <!--<h3><a href="./bio/IOTAEnergyBIO2G.docx">View Bio</a></h3>-->
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team IOTA Energy.jpg" style="max-width: 100%" />
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
+            <!-- Individual group Entry - Text right aligned. -->
+            <div class="row center_row group_row">
+
+                <div class="visible-xs xs-col-12">
+                    <img src="./images/Team Down B Technologies.jpg" class="img-rounded xs-group-image" />
+                </div>
+
+                <div class="hidden-xs col-sm-4 col-md-4 center">
+                    <img src="./images/Team Down B Technologies.jpg" style="max-width: 100%" />
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 center">
+                    <div class="group_description">
+                        <h3>Team Down B Technologies</h3>
+                        <!--<h4><span>Project:</span>Project Here</h4>
+                        <h4><span>Sponsored by:</span><a href="" target="_">Sponsor</a></h4>-->
+                        <p>Summary coming soon!</p>
+                        <!--<h3><a href="">View Bio</a></h3>-->
+                    </div>
+                </div>
+            </div>
+            <!-- End Individual Group Entry -->
+
         </div>
     </div>
 
@@ -176,81 +502,69 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="section_header">Sponsors</h1>
+                    <h1 class="section_header" style="text-align: center;">Project Sponsors</h1>
                 </div>
             </div>
-
-            <!-- Individual group Entry - Text left aligned. -->
-            <div class="row center_row group_row">
-                <div class="col-xs-8 center">
-                    <div class="group_description">
-                        <h3><a href="http://gaben.tv/">Gaben</a></h3>
-                        <p>Gabe Newell, often nicknamed Gaben, is the co-founder and managing director of video game developer Valve Corporation. As a prominent figure in the video gaming industry, Newell has developed a sizable reputation on the Internet for his controversial views on console gaming, his large physique, and relation to Valve series such as Counter-Strike, Half-Life, Left 4 Dead, Portal and Team Fortress. Due to the constant delay of Half-Life 2: Episode Three and some of the features on Team Fortress 2, he has also gained a reputation as a troll.</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 center">
-                    <img src="./images/Sponsor - Gaben.jpg" style="max-width: 100%" />
-                </div>
+            <div class="row">
+                <div class="col-sm-4 sponsors_resize"><a href="http://www.sendwithus.com" target="_"><img src="./images/Sponsor - Sendwithus.jpg" /></a></div>
+                <div class="col-sm-4 sponsors_resize"><a href="http://need2.ca/" target="_"><img src="./images/Sponsor - Need 2.jpg"/></a></div>
+                <div class="col-sm-4 sponsors_resize"><a href="http://npna.ca/" target="_"><img src="./images/Sponsor - North Park.jpg"/></a></div>
             </div>
-            <!-- End Individual Group Entry -->
-
-            <!-- Individual group Entry - Text right aligned. -->
-            <div class="row center_row group_row">
-                <div class="col-xs-4 center">
-                    <img src="./images/Sponsor - Gaben.jpg" style="max-width: 100%" />
-                </div>
-                <div class="col-xs-8 center">
-                    <div class="group_description">
-                        <h3><a href="http://gaben.tv/">Gaben</a></h3>
-                        <p>Gabe Newell, often nicknamed Gaben, is the co-founder and managing director of video game developer Valve Corporation. As a prominent figure in the video gaming industry, Newell has developed a sizable reputation on the Internet for his controversial views on console gaming, his large physique, and relation to Valve series such as Counter-Strike, Half-Life, Left 4 Dead, Portal and Team Fortress. Due to the constant delay of Half-Life 2: Episode Three and some of the features on Team Fortress 2, he has also gained a reputation as a troll.</p>
-                    </div>
-                </div>
+            <div class="row">
+                <div class="col-sm-4 sponsors_resize sponsors_resize_first"><a href="https://ca.nfis.org/index_eng.html" target="_"><img src="./images/Sponsor - NFIS.jpg" /></a></div>
+                <div class="col-sm-4 sponsors_resize"><a href="http://www.westshorezumba.com/" target="_"><img src="./images/Sponsor - Latin Party.jpg"/></a></div>
             </div>
-            <!-- End Individual Group Entry -->
-
+            <div class="row">
+                <div class="col-sm-4 sponsors_resize"><a href="http://www.camosun.bc.ca" target="_"><img src="./images/Sponsor - Camosun College.jpg" /></a></div>
+                <div class="col-sm-4 sponsors_resize"><a href="http://dactylstudios.com/" target="_"><img src="./images/Sponsor - Dactyl Studios.jpg" /></a></div>
+                <div class="col-sm-4 sponsors_resize"><img src="./images/Sponsor - Stonecroft.jpg" /></div>
+            </div>
+            <div class="row" style="margin-bottom: 40px;">
+                <div class="col-sm-4 sponsors_resize sponsors_resize_first"><a href="http://www.env.gov.bc.ca/bcparks/" target="_"><img src="./images/Sponsor - BC Parks.jpg" /></a></div>
+                <div class="col-sm-4 sponsors_resize"><a href="http://www.sierrasystems.com/" target="_"><img src="./images/Sponsor - Sierra Systems.jpg"/></a></div>
+            </div>
         </div>
     </div>
     <div class="scroll symposium">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="section_header">Symposium Details</h1>
+                    <h1 class="section_header" style="text-align: center;">Symposium Details</h1>
                 </div>
             </div>
             <div class="row group_row">
                 <div class="col-md-6">
                     <p>
                         <span class="intro">DATE: </span>
-                        <span class="information">June 19, 2014</span>
+                        <span class="information">June 17th, 2014</span>
                     </p>
                     <p>
                         <span class="intro">TIME: </span>
-                        <span class="information">9:00AM to 5:00PM</span>
+                        <span class="information">9:00AM to 4:00PM</span>
                     </p>
                     <p>
                     <p>
                         <span class="intro">LOCATION: </span>
                             <span class="information">
-                                Pacific Forestry Centre<br/>
-                                506 Burnside Road West<br/>
+                                Inn at Laurel Point<br/>
+                                680 Montreal Street<br/>
                                 Victoria, BC
                             </span>
                     </p>
-                    <p>Parking is free. There will be signs indicating which parking lot to use. Please proceed to the main entrance of the building to check into the event.</p>
-                    <p>Catering provided by <a href="http://www.hotpockets.com/">Hot Pockets</a>.</p>
+                    <!--<p>Parking is free. There will be signs indicating which parking lot to use. Please proceed to the main entrance of the building to check into the event.</p>-->
                 </div>
-                <div class="col-md-6" style="border-radius: 15px; ">
+                <div class="col-md-6" style="border-radius: 15px; ">                
                     <div style="border-radius: 15px; background: white; text-align: center; height: 475px;">
-                        <!-- Map -->
-                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21167.92621518904!2d-123.394292!3d48.4567065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548f7307cc7133f1%3A0xd96fcbf84ec80d3b!2sPacific+Forestry+Centre!5e0!3m2!1sen!2s!4v1397617860340" width="525" height="450" frameborder="0" style="border-radius:15px; margin-top: 15px;"></iframe>
+                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2647.7295130289594!2d-123.376678!3d48.423337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548f7499a7def1d5%3A0xba5cd544f59d7dbf!2sInn+at+Laurel+Point!5e0!3m2!1sen!2s!4v1400181785877" width="525" height="450" frameborder="0" style="border-radius:15px; margin-top: 15px;"></iframe>
                     </div>
                 </div>
             </div>
             <div class="row group_row">
                 <div class="col-md-12">
-                    <h2>Schedule</h2>
+                    <h2>Schedule coming soon!</h2>
                 </div>
             </div>
+            <!--
             <div class="row group_row">
                 <div class="col-md-6">
                     <div class="group_description">
@@ -291,48 +605,63 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </div>
     <div class="registration section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Registration</h1>
-                    <p>Are you interested in attending? Please let us know!</p>
+                    <h1>Will you be attending? <br/>Please let us know!</h1>
                 </div>
             </div>
             <div class="row group_row">
-                <div class="group_description col-md-offset-2 col-md-8">
-                    <form class="form-horizontal">
+                <div id="registration_area" class="group_description col-md-offset-2 col-md-8">
+                    <form id="registration_form" class="form-horizontal" method="post" action="./register2014.php">
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Name</label>
+                            <label for="name" class="col-sm-2 control-label">First Name:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" placeholder="Name" />
+                                <input type="text"  required="required" class="form-control"  name='firstname'  id='firstname' placeholder="First Name" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="organization" class="col-sm-2 control-label">Organization</label>
+                            <label for="name" class="col-sm-2 control-label">Last Name:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="company" placeholder="Organization" />
+                                <input type="text" required="required"  class="form-control"  name='lastname' id="lastname" placeholder="Last Name" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-sm-2 control-label">Email</label>
+                            <label for="organization" class="col-sm-2 control-label">Organization:</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" placeholder="Email Address" />
+                                <input type="text" required="required" class="form-control"  name='company' id="company" placeholder="Organization" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-sm-2 control-label">Phone #</label>
+                            <label for="email" class="col-sm-2 control-label">Email:</label>
                             <div class="col-sm-10">
-                                <input type="phone" class="form-control" id="phone" placeholder="Phone #" />
+                                <input type="email"  required="required" class="form-control" name='email'  id="email" placeholder="Email Address" />
                             </div>
                         </div>
-                        <button type="button" class="btn btn-lg btn-primary">Register</button>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Phone #:</label>
+                            <div class="col-sm-10">
+                                <input type="phone" class="form-control" name='phone' id="phone" placeholder="Phone #" />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary">Register</button>
                     </form>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <p class="footer-content">2014 Camosun College • Victoria BC, Canada <br/>
+                Contact us @ <a href="mailto:capstone2014@cs.camosun.bc.ca">capstone2014@cs.camosun.bc.ca</a>
+            </div>
+        </div>
+    </div>
     </div>
     </body>
 </html>
