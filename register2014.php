@@ -161,7 +161,7 @@ if(!$mailSent) {
   }
   
 }else {
-  echo "Sent email to : ".$email."<br/>\r\n";
-  echo "Registration Successful, we look forward to seeing you<br/>\r\n on June 17th, 2014.<br/>\r\n";
+  echo "Confirmation delivered to : ".$email."<br/>\r\n";
+  echo "Registration Successful! We look forward to seeing you<br/>\r\n on June 17th, 2014.<br/>\r\n";
 }
 ?> 

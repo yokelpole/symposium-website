@@ -46,6 +46,8 @@
                 $('#registration_form').submit(function(event) {
                     event.preventDefault();
 
+                    $('#registration_area').html('<h3 style="text-align: center">Submitting...<br>Please wait a moment!</h3>');
+
                     var posting = $.post('./register2014.php', $(this).serialize());
 
                     posting.done(function(data) {
