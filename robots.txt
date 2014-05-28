@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /credentials.php
+Disallow: /register2014.php

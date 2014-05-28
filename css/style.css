@@ -261,6 +261,13 @@ i.welcome_down_arrow {
 
 .symposium a {
 	font-weight: 500;
+}
+
+.symposium span a {
+	color: white;
+}
+
+.symposium p a {
 	color: white;
 }
 
